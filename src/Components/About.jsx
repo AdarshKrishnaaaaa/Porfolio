@@ -141,7 +141,7 @@ function About() {
                 <Typography
                   variant='body1'
                   sx={{
-                    textAlign: 'start',
+                    textAlign: 'center',
                     color: 'white',
                     fontSize: { xs: '14px', sm: '17px', md: '17px' },
                     mt: 1,
@@ -151,7 +151,7 @@ function About() {
                 </Typography>
                 <Typography
                   sx={{
-                    textAlign: 'start',
+                    textAlign: 'center',
                     color: 'white',
                     fontSize: { xs: '22px', sm: '26px', md: '34px' },
                     fontWeight: 'bold',
