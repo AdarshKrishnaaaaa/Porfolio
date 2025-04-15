@@ -10,7 +10,7 @@ function Intro() {
         component="section"
         sx={{
           p: 2,
-          height: '100vh',
+          height: '80vh',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -24,7 +24,7 @@ function Intro() {
           transition={{ duration: 1 }}
         >
           <Box component="section" sx={{ p: 2, position: 'relative', zIndex: 1 }}>
-            <Typography variant="h1" sx={{ textAlign: 'center', fontWeight: 'bold', color: '#CCF5FE', fontSize: { xs: '24px', sm: '42px', md: '60px' } }}>
+            <Typography variant="h1" sx={{ textAlign: 'center', fontWeight: 'bold', color: '#CCF5FE', fontSize: { xs: '27px', sm: '42px', md: '60px' } }}>
               Hi, I'm Adarsh
             </Typography>
             <motion.div
@@ -42,7 +42,7 @@ function Intro() {
                 sx={{
                   textAlign: 'center',
                   fontWeight: 'bold',
-                  fontSize: { xs: '34px', sm: '62px', md: '80px' },
+                  fontSize: { xs: '38px', sm: '62px', md: '80px' },
                 }}
               >
                 FullStack Developer
