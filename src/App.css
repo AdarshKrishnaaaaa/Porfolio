@@ -111,6 +111,7 @@
     .wrapper span {
         width: 20px;
         height: 20px;
+        filter: blur(2px);
     }
 
     .wrapper span:nth-child(2),
