@@ -68,7 +68,7 @@ function Intro() {
               textTransform: 'capitalize'
             }}
             onClick={() => {
-              const section = document.getElementById("my-projects");
+              const section = document.getElementById("projects");
               section?.scrollIntoView({ behavior: "smooth" });
             }}
           >
