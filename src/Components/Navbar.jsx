@@ -104,7 +104,7 @@ function NavigationBar() {
 
       {/* Drawer for Mobile */}
       <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <Box sx={{ width: 100, mt: 2 }}>
+        <Box sx={{ width: 150, mt: 2 }}>
           <List>
             {navLinks.map((link) => (
               <ListItem
