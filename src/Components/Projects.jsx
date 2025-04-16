@@ -56,8 +56,8 @@ function Projects() {
                     title: "Expensio",
                     description: "A tool to record, manage, and analyze daily financial expenses efficiently.",
                     image: expensioImg,
-                    live: '.',
-                    link: '.'
+                    live: 'https://expense-tracker-seven-phi-24.vercel.app/',
+                    link: 'https://github.com/AdarshKrishnaaaaa/Expense-Tracker'
                 },
                 {
                     title: "App Store",
