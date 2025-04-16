@@ -72,7 +72,7 @@ function Intro() {
               section?.scrollIntoView({ behavior: "smooth" });
             }}
           >
-            Show My Works
+            See My Works
           </Button>
         </motion.div>
       </Box>
