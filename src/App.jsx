@@ -8,11 +8,9 @@ import MyDetails from './Components/Details';
 import { useEffect } from 'react';
 
 function App() {
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return (
     <div className='App'>
       <div className="wrapper">
