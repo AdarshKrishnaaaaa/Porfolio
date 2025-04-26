@@ -15,9 +15,15 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTheme } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
+import InfoIcon from '@mui/icons-material/Info';
+import PhoneIcon from '@mui/icons-material/Phone';
+
 function NavigationBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const navLinks = ['About', 'Projects'];
+  const navLinks = [
+    { label: 'About', icon: <InfoIcon /> },
+    { label: 'Contact', icon: <PhoneIcon /> },
+  ];
 
   const handleScroll = (id) => {
     const section = document.getElementById(id.toLowerCase());
@@ -82,19 +88,21 @@ function NavigationBar() {
               {navLinks.map((link) => (
                 <Button
                   key={link}
-                  onClick={() => handleScroll(link)}
+                  onClick={() => handleScroll(link.label)}
                   sx={{
                     color: '#ffffff',
                     textTransform: 'capitalize',
                     fontWeight: 500,
                     fontSize: '1rem',
+                    gap: 1,
                     '&:hover': {
                       color: '#319CB5',
                       backgroundColor: 'transparent',
                     },
                   }}
                 >
-                  {link}
+                  {link.icon}
+                  {link.label}
                 </Button>
               ))}
             </Stack>
@@ -103,28 +111,52 @@ function NavigationBar() {
       </AppBar>
 
       {/* Drawer for Mobile */}
+<<<<<<< HEAD
       <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+=======
+      <Drawer
+        anchor="right"
+        open={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        PaperProps={{
+          sx: {
+            backgroundColor: 'transparent',
+            backdropFilter: 'blur(1rem)'
+          },
+        }}
+      >
+>>>>>>> 6669577 (your update message)
         <Box sx={{ width: 150, mt: 2 }}>
           <List>
             {navLinks.map((link) => (
               <ListItem
                 button
-                key={link}
-                onClick={() => handleScroll(link)}
+                key={link.label}
+                onClick={() => handleScroll(link.label)}
               >
-                <ListItemText
-                  primary={link}
-                  primaryTypographyProps={{
-                    fontSize: '1rem',
-                    fontWeight: 500,
-                    color: '#319CB5',
-                  }}
-                />
+                <ListItem
+                  button
+                  key={link.label}
+                  onClick={() => handleScroll(link.label)}
+                  sx={{ color: '#319CB5', gap: 1 }}
+                >
+                  {link.icon}
+                  <ListItemText
+                    primary={link.label}
+                    primaryTypographyProps={{
+                      fontSize: '1rem',
+                      fontWeight: 500,
+                      color: '#319CB5',
+                    }}
+                  />
+                </ListItem>
+
               </ListItem>
             ))}
           </List>
         </Box>
       </Drawer>
+
     </>
   );
 }
