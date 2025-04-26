@@ -111,9 +111,6 @@ function NavigationBar() {
       </AppBar>
 
       {/* Drawer for Mobile */}
-<<<<<<< HEAD
-      <Drawer anchor="right" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-=======
       <Drawer
         anchor="right"
         open={drawerOpen}
@@ -125,7 +122,6 @@ function NavigationBar() {
           },
         }}
       >
->>>>>>> 6669577 (your update message)
         <Box sx={{ width: 150, mt: 2 }}>
           <List>
             {navLinks.map((link) => (

@@ -111,11 +111,8 @@
     .wrapper span {
         width: 20px;
         height: 20px;
-<<<<<<< HEAD
         filter: blur(3px);
-=======
         filter: blur(2px);
->>>>>>> 6669577 (your update message)
     }
 
     .wrapper span:nth-child(2),
