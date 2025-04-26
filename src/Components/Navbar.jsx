@@ -142,7 +142,7 @@ function NavigationBar() {
                     primaryTypographyProps={{
                       fontSize: '1rem',
                       fontWeight: 500,
-                      color: '#319CB5',
+                      color: 'white',
                     }}
                   />
                 </ListItem>
