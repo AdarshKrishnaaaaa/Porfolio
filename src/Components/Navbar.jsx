@@ -34,7 +34,7 @@ function NavigationBar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  const text = "PortFolio";
+  const text = "Software Developer";
 
   return (
     <>
@@ -66,7 +66,7 @@ function NavigationBar() {
                   delay: index * 0.1, // Delay per letter
                   duration: 0.5, // Duration for each letter's appearance
                 }}
-                style={{ color: index === 4 ? '#319CB5' : '#ffffff' }} // Color change for 'F'
+                style={{ color: index === 9 ? '#319CB5' : '#ffffff' }} // Color change for 'F'
               >
                 {char}
               </motion.span>
