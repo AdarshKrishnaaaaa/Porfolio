@@ -33,7 +33,7 @@ function NavigationBar() {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  
+
   const words = ['Web Developer', 'Software Developer'];
   const [currentIndex, setCurrentIndex] = useState(0);
   const text = words[currentIndex];
@@ -45,6 +45,7 @@ function NavigationBar() {
 
     return () => clearInterval(interval); // Cleanup when unmounted
   }, []);
+
   return (
     <>
       <AppBar
@@ -68,20 +69,6 @@ function NavigationBar() {
               gap: '2px', // small gap between letters
             }}
           >
-            {text.split('').map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  delay: index * 0.1, // Delay per letter
-                  duration: 0.5, // Duration for each letter's appearance
-                }}
-                style={{ color: index === 9 ? '#319CB5' : '#ffffff' }} // Color change for 'F'
-              >
-                {char}
-              </motion.span>
-            ))}
             <motion.div
               key={currentIndex}
               initial={{ opacity: 0, scale: 0.9 }}
