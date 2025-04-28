@@ -35,6 +35,7 @@ const Contact = () => {
                 padding: "4rem 1rem",
                 display: "flex",
                 justifyContent: "center",
+                paddingTop:'10rem'
             }}
         >
             <Box

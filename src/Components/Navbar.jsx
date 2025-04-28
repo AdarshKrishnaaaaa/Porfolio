@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
@@ -34,7 +34,17 @@ function NavigationBar() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
-  const text = "PortFolio";
+  const words = ['Web Developer', 'Software Developer'];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const text = words[currentIndex];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
+    }, 3000); // Change word every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup when unmounted
+  }, []);
 
   return (
     <>
@@ -51,26 +61,41 @@ function NavigationBar() {
           <Typography
             variant="h6"
             sx={{
-              fontWeight: 'bold',
+              fontFamily: 'Courier New, monospace', 
               color: '#ffffff',
               letterSpacing: 1.5,
               cursor: 'pointer',
+              display: 'inline-flex',
+              gap: '2px', // small gap between letters
             }}
           >
-            {text.split('').map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  delay: index * 0.1, // Delay per letter
-                  duration: 0.5, // Duration for each letter's appearance
-                }}
-                style={{ color: index === 4 ? '#319CB5' : '#ffffff' }} // Color change for 'F'
-              >
-                {char}
-              </motion.span>
-            ))}
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              transition={{
+                duration: 0.5,
+                ease: 'easeInOut',
+              }}
+            >
+              {text.split('').map((char, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{
+                    delay: index * 0.05, // Delay per letter (shorter delay)
+                    duration: 0.4,       // Duration for each letter's appearance
+                  }}
+                  style={{
+                    color: char.toLowerCase() === 'd' ? 'white' : '#319CB5', // First letter color change (you can adjust)
+                  }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </motion.div>
           </Typography>
 
           {isMobile ? (
@@ -95,9 +120,18 @@ function NavigationBar() {
                     fontWeight: 500,
                     fontSize: '1rem',
                     gap: 1,
-                    '&:hover': {
-                      color: '#319CB5',
-                      backgroundColor: 'transparent',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      bottom: 0,
+                      left: 0,
+                      width: '0%',
+                      height: '1px',
+                      backgroundColor: '#319CB5',
+                      transition: 'width 0.3s ease',
+                    },
+                    '&:hover::before': {
+                      width: '100%',
                     },
                   }}
                 >
@@ -118,7 +152,7 @@ function NavigationBar() {
         PaperProps={{
           sx: {
             backgroundColor: 'transparent',
-            backdropFilter: 'blur(1rem)'
+            backdropFilter: 'blur(1rem)',
           },
         }}
       >
@@ -142,7 +176,7 @@ function NavigationBar() {
                     primaryTypographyProps={{
                       fontSize: '1rem',
                       fontWeight: 500,
-                      color: '#319CB5',
+                      color: 'white',
                     }}
                   />
                 </ListItem>
