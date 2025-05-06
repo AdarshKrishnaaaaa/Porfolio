@@ -41,6 +41,7 @@ function Projects() {
                     flexDirection: { xs: 'column', md: 'row' },
                     flexWrap: 'wrap',
                     gap: 8,
+                    columnGap:22,
                     justifyContent: 'center',
                     alignItems: 'center',
                     zIndex: 1
