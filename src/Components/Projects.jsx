@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import weatherAppImg from '../assets/ProjectImg1.png';
 import expensioImg from '../assets/ProjectImg2.png';
 import appStoreImg from '../assets/ProjectImg3.png';
+import helloWorldAppImg from '../assets/ProjectImg4.png';
 
 function Projects() {
     return (
@@ -65,7 +66,14 @@ function Projects() {
                     image: appStoreImg,
                     live: "https://online-website-chi.vercel.app/",
                     link: "https://github.com/AdarshKrishnaaaaa/Online-Website"
-                }].map((project, index) => (
+                },
+                {
+                   title: "HelloWorld Chat App",
+                   description: "A real-time chat app built with the MERN stack, featuring user authentication and live messaging.",
+                   image: helloWorldAppImg,
+                   live: "https://chat-app-99s1.onrender.com/",
+                   link: "https://github.com/AdarshKrishnaaaaa/Chat-App"
+               }].map((project, index) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, scale: 0.9 }}
