@@ -96,6 +96,21 @@ function NavigationBar() {
                 </motion.span>
               ))}
             </motion.div>
+            {text.split('').map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{
+                  delay: index * 0.1, // Delay per letter
+                  duration: 0.5, // Duration for each letter's appearance
+                }}
+                style={{ color: index === 9 ? '#319CB5' : '#ffffff' }} // Color change for 'F'
+              >
+                {char}
+              </motion.span>
+            ))}
+ (Update Navbar.jsx)
           </Typography>
 
           {isMobile ? (
