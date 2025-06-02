@@ -41,7 +41,7 @@ function About() {
               overflow: 'hidden',
               zIndex: '1',
               position: 'relative',
-              display:'flex',
+              display: 'flex',
             }}
           >
             <img
@@ -70,7 +70,7 @@ function About() {
                 textAlign: 'start',
               }}
             >
-              <Typography variant="body1" sx={{ mb: 1,fontSize: { xs: '13px', sm: '17px', md: '17px' } }}>
+              <Typography variant="body1" sx={{ mb: 1, fontSize: { xs: '13px', sm: '17px', md: '17px' } }}>
                 Skilled MERN stack developer with hands-on experience in over 5 projects.
               </Typography>
               <Typography sx={{
@@ -125,7 +125,7 @@ function About() {
               <Box
                 component="section"
                 sx={{
-                  width: { xs: '20rem', sm: '35rem', md: '40rem' },
+                  width: { xs: '20rem', sm: '35rem', md: '40rem', lg: '35rem' },
                   minHeight: '11.5rem',
                   borderRadius: '2rem',
                   overflow: 'hidden',

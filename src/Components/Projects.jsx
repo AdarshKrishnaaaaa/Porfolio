@@ -1,4 +1,4 @@
-import { Box, Typography, Card, CardMedia, CardContent, CardActions, Button } from '@mui/material';
+import { Box, Typography, Card, CardMedia, CardContent, CardActions, Button, Divider } from '@mui/material';
 import { motion } from 'framer-motion';
 import weatherAppImg from '../assets/ProjectImg1.png';
 import expensioImg from '../assets/ProjectImg2.png';
@@ -30,9 +30,10 @@ function Projects() {
                     transition={{ duration: 0.8 }}
                     viewport={{ once: true }}
                 >
-                    <Typography variant="h4" letterSpacing='.5rem' sx={{ mb: '10rem' }}>
+                    <Typography variant="h4" letterSpacing='.5rem' sx={{ mb: '5rem' }}>
                         My Projects
                     </Typography>
+
                 </motion.div>
 
                 <Box
@@ -95,7 +96,7 @@ function ProjectCard({ title, description, image, link, live }) {
     return (
         <Card
             sx={{
-                width: { xs: '100%', sm: '35rem', md: '24rem' },
+                width: { xs: '20rem', sm: '35rem', md: '24rem' },
                 background: 'linear-gradient(to top, #03181F, #319CB5)',
                 color: 'white',
                 borderRadius: 5,

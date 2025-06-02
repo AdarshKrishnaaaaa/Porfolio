@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Container, Box, Avatar } from '@mui/material';
+import { Typography, Container, Box, Avatar, Divider } from '@mui/material';
 import { motion } from 'framer-motion';
 import Person from '../assets/Person.png'
 import { Element } from 'react-scroll';
@@ -22,11 +22,14 @@ const About = () => {
                         letterSpacing='.5rem'
                         sx={{
                             color: '#fff',
-                            mb: '5rem'
+                            mb: '3rem'
                         }}
                     >
                         About
                     </Typography>
+
+                    <Divider sx={{ my: 5, borderColor: '#319CB5' }} />
+                    
                 </motion.div>
 
                 {/* Image + Content */}

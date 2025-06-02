@@ -43,7 +43,7 @@ const Contact = () => {
                         padding: "4rem 1rem",
                         display: "flex",
                         justifyContent: "center",
-                        paddingTop: {xs:'15rem',md:'10rem'}
+                        paddingTop: { xs: '15rem', md: '10rem' }
                     }}
                 >
                     <Box
