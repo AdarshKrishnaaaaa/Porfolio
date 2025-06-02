@@ -35,7 +35,7 @@ function About() {
         >
           <Box component="section"
             sx={{
-              width: { xs: '19.5rem', sm: '35rem', md: '40rem' },
+              width: { xs: '20rem', sm: '35rem', md: '40rem' },
               height: '24rem',
               borderRadius: '2rem',
               overflow: 'hidden',
@@ -125,7 +125,7 @@ function About() {
               <Box
                 component="section"
                 sx={{
-                  width: { xs: '19.5rem', sm: '35rem', md: '40rem' },
+                  width: { xs: '20rem', sm: '35rem', md: '40rem' },
                   minHeight: '11.5rem',
                   borderRadius: '2rem',
                   overflow: 'hidden',

@@ -95,7 +95,7 @@ function ProjectCard({ title, description, image, link, live }) {
     return (
         <Card
             sx={{
-                width: { xs: '100%', sm: '20rem', md: '24rem' },
+                width: { xs: '100%', sm: '35rem', md: '24rem' },
                 background: 'linear-gradient(to top, #03181F, #319CB5)',
                 color: 'white',
                 borderRadius: 5,
