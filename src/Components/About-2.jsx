@@ -35,12 +35,13 @@ function About() {
         >
           <Box component="section"
             sx={{
-              width: { xs: '18rem', sm: '35rem', md: '35rem' },
+              width: { xs: '19.5rem', sm: '35rem', md: '40rem' },
               height: '24rem',
               borderRadius: '2rem',
               overflow: 'hidden',
               zIndex: '1',
-              position: 'relative'
+              position: 'relative',
+              display:'flex',
             }}
           >
             <img
@@ -54,7 +55,7 @@ function About() {
                 top: 0,
                 left: 0,
                 zIndex: -1,
-                display: 'flex'
+                display: 'flex',
               }}
             />
 
@@ -124,7 +125,7 @@ function About() {
               <Box
                 component="section"
                 sx={{
-                  width: { xs: '18rem', sm: '35rem', md: '40rem' },
+                  width: { xs: '19.5rem', sm: '35rem', md: '40rem' },
                   minHeight: '11.5rem',
                   borderRadius: '2rem',
                   overflow: 'hidden',
