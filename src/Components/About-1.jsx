@@ -1,13 +1,13 @@
 import React from 'react';
 import { Typography, Container, Box, Avatar } from '@mui/material';
-import { calcLength, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Person from '../assets/Person.png'
 import { Element } from 'react-scroll';
 
 const About = () => {
     return (
         <Element name='about'>
-            <Container maxWidth="lg" sx={{ pt: '10rem', mb: '10rem'}}>
+            <Container maxWidth="lg" sx={{ pt: '10rem',mt:'3rem', mb: '10rem'}}>
                 {/* About Heading */}
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}

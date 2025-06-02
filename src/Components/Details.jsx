@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography, Stack } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
 import PhoneIcon from '@mui/icons-material/Phone';
@@ -27,8 +26,8 @@ const Portfolio = () => {
             '&::after': {
               content: '""',
               position: 'absolute',
-              left: 50,
-              right: 50,
+              left: 0,
+              right: 0,
               bottom: 0,
               height: '2px',
               backgroundColor: '#319CB5',

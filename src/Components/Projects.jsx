@@ -1,4 +1,3 @@
-import React from 'react';
 import { Box, Typography, Card, CardMedia, CardContent, CardActions, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import weatherAppImg from '../assets/ProjectImg1.png';
