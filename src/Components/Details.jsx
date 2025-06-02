@@ -17,18 +17,18 @@ const Portfolio = () => {
           variant="h5"
           sx={{
             color: 'white',
-            fontWeight: 600,
+            fontFamily:'monospace',
             textAlign: 'center',
             position: 'relative',
             display: 'inline-block',
             padding: '0.5rem 1.5rem',
             textTransform: 'uppercase',
-            letterSpacing: '1.5px',
+            letterSpacing: '.1rem',
             '&::after': {
               content: '""',
               position: 'absolute',
-              left: 0,
-              right: 0,
+              left: 50,
+              right: 50,
               bottom: 0,
               height: '2px',
               backgroundColor: '#319CB5',

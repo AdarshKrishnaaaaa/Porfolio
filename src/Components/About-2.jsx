@@ -1,4 +1,4 @@
-import aboutCardImg from '../assets/aboutCardImg1.jpg';
+import aboutCardImg from '../assets/aboutCardImg.jpg';
 import { Box, Button, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
@@ -18,8 +18,8 @@ function About() {
 
   return (
     <>
-      <Box component="section" id="about" sx={{
-        p: '10rem 0rem',
+      <Box component="section" sx={{
+        pb: '10rem',
         height: '100%',
         display: 'flex',
         justifyContent: 'center',
@@ -35,7 +35,7 @@ function About() {
         >
           <Box component="section"
             sx={{
-              width: { xs: '18rem', sm: '35rem', md: '40rem' },
+              width: { xs: '18rem', sm: '35rem', md: '35rem' },
               height: '24rem',
               borderRadius: '2rem',
               overflow: 'hidden',

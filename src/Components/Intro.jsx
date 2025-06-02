@@ -1,7 +1,8 @@
-import React from 'react';
 import { Box, Typography } from '@mui/material';
 import Button from '@mui/material/Button';
 import { motion } from 'framer-motion';
+import '../App.css'
+import { Link } from 'react-scroll';
 
 function Intro() {
   return (
@@ -60,20 +61,29 @@ function Intro() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          <Button
-            variant="outlined"
-            sx={{
-              border: 'solid #319CB5 1px',
-              color: 'white',
-              textTransform: 'capitalize'
-            }}
-            onClick={() => {
-              const section = document.getElementById("projects");
-              section?.scrollIntoView({ behavior: "smooth" });
-            }}
-          >
-            See My Works
-          </Button>
+          <Link to="project" smooth={true} duration={500}>
+            <Button
+              variant="outlined"
+              className='btn'
+              sx={{
+                color: 'Black',
+                textTransform: 'capitalize',
+                border: 'none',
+                borderRadius: '2rem',
+                fontFamily: 'Segoe UI, Tahoma, Geneva, Verdana, sans-serif',
+                position: 'relative',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center'
+              }}
+              onClick={() => {
+                const section = document.getElementById("projects");
+                section?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              See My Works
+            </Button>
+          </Link>
         </motion.div>
       </Box>
     </>

@@ -17,19 +17,14 @@ import { motion } from 'framer-motion';
 
 import InfoIcon from '@mui/icons-material/Info';
 import PhoneIcon from '@mui/icons-material/Phone';
+import { Link } from 'react-scroll';
 
 function NavigationBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const navLinks = [
-    { label: 'About', icon: <InfoIcon /> },
-    { label: 'Contact', icon: <PhoneIcon /> },
+    { label: 'About', icon: <InfoIcon />,to:'about' },
+    { label: 'Contact', icon: <PhoneIcon />,to:'contact' },
   ];
-
-  const handleScroll = (id) => {
-    const section = document.getElementById(id.toLowerCase());
-    section?.scrollIntoView({ behavior: 'smooth' });
-    setDrawerOpen(false); // close drawer on click
-  };
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
@@ -53,7 +48,7 @@ function NavigationBar() {
         sx={{
           backgroundColor: 'transparent',
           backdropFilter: 'blur(10px)',
-          boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
+          boxShadow: 'none',
           padding: '0.3rem 1rem',
         }}
       >
@@ -96,21 +91,6 @@ function NavigationBar() {
                 </motion.span>
               ))}
             </motion.div>
-            {text.split('').map((char, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  delay: index * 0.1, // Delay per letter
-                  duration: 0.5, // Duration for each letter's appearance
-                }}
-                style={{ color: index === 9 ? '#319CB5' : '#ffffff' }} // Color change for 'F'
-              >
-                {char}
-              </motion.span>
-            ))}
- (Update Navbar.jsx)
           </Typography>
 
           {isMobile ? (
@@ -126,9 +106,9 @@ function NavigationBar() {
           ) : (
             <Stack direction="row" spacing={3}>
               {navLinks.map((link) => (
+                <Link to={link.to} smooth={true} duration={500}>
                 <Button
                   key={link}
-                  onClick={() => handleScroll(link.label)}
                   sx={{
                     color: '#ffffff',
                     textTransform: 'capitalize',
@@ -153,6 +133,7 @@ function NavigationBar() {
                   {link.icon}
                   {link.label}
                 </Button>
+                </Link>
               ))}
             </Stack>
           )}
