@@ -109,37 +109,44 @@ function NavigationBar() {
             </>
           ) : (
             <Stack direction="row" spacing={3}>
-              {navLinks.map((link) => (
-                <Link to={link.to} smooth={true} duration={500}>
-                  <Button
-                    key={link}
-                    sx={{
-                      color: '#ffffff',
-                      textTransform: 'capitalize',
-                      fontWeight: 500,
-                      fontSize: '1rem',
-                      gap: 1,
-                      '&::before': {
-                        content: '""',
-                        position: 'absolute',
-                        bottom: 0,
-                        left: 0,
-                        width: '0%',
-                        height: '1px',
-                        backgroundColor: '#319CB5',
-                        transition: 'width 0.3s ease',
-                      },
-                      '&:hover::before': {
-                        width: '100%',
-                      },
-                    }}
+              {navLinks.map((link, index) => (
+                <Link to={link.to} smooth={true} duration={500} key={link.label}>
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    {link.icon}
-                    {link.label}
-                  </Button>
+                    <Button
+                      sx={{
+                        color: '#ffffff',
+                        textTransform: 'capitalize',
+                        fontWeight: 500,
+                        fontSize: '1rem',
+                        gap: 1,
+                        position: 'relative',
+                        '&::before': {
+                          content: '""',
+                          position: 'absolute',
+                          bottom: 0,
+                          left: 0,
+                          width: '0%',
+                          height: '1px',
+                          backgroundColor: '#319CB5',
+                          transition: 'width 0.3s ease',
+                        },
+                        '&:hover::before': {
+                          width: '100%',
+                        },
+                      }}
+                    >
+                      {link.icon}
+                      {link.label}
+                    </Button>
+                  </motion.div>
                 </Link>
               ))}
             </Stack>
+
           )}
         </Toolbar>
       </AppBar>
@@ -152,36 +159,42 @@ function NavigationBar() {
         PaperProps={{
           sx: {
             backgroundColor: 'transparent',
-            backdropFilter: 'blur(1rem)',
+            backdropFilter: 'blur(.5rem)',
           },
         }}
       >
         <Box sx={{ width: 150, mt: 2 }}>
           <List>
-            {navLinks.map((link) => (
+            {navLinks.map((link, index) => (
               <Link to={link.to} smooth={true} duration={500}>
-                <ListItem
-                  button
-                  key={link.label}
-                  onClick={closeNav}
+                <motion.div
+                  initial={{ opacity: 0, x: 50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   <ListItem
                     button
                     key={link.label}
-                    sx={{ color: '#319CB5', gap: 1 }}
+                    onClick={closeNav}
                   >
-                    {link.icon}
-                    <ListItemText
-                      primary={link.label}
-                      primaryTypographyProps={{
-                        fontSize: '1rem',
-                        fontWeight: 500,
-                        color: 'white',
-                      }}
-                    />
-                  </ListItem>
+                    <ListItem
+                      button
+                      key={link.label}
+                      sx={{ color: '#319CB5', gap: 1 }}
+                    >
+                      {link.icon}
+                      <ListItemText
+                        primary={link.label}
+                        primaryTypographyProps={{
+                          fontSize: '1rem',
+                          fontWeight: 500,
+                          color: 'white',
+                        }}
+                      />
+                    </ListItem>
 
-                </ListItem>
+                  </ListItem>
+                </motion.div>
               </Link>
             ))}
           </List>
