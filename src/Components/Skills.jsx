@@ -18,11 +18,11 @@ const skills = [
 
 const SkillsSection = () => {
     return (
-        <Box sx={{ p: 10 }}>
+        <Box sx={{ pt: '10rem', mt: '3rem', mb: '10rem' }}>
             <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 1.5, delay: 1.5 }}
             >
                 <Typography variant="h4" letterSpacing='.5rem' color='white' sx={{ display: 'flex', justifyContent: 'center', mb: '5rem' }}>
                     Skills
@@ -31,9 +31,10 @@ const SkillsSection = () => {
             </motion.div>
 
             <motion.div
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+               initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.8}}
+                            viewport={{ once: true }}
             >
 
                 <Box
