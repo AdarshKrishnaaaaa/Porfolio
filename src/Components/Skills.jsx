@@ -22,7 +22,7 @@ const SkillsSection = () => {
             <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
             >
                 <Typography variant="h4" letterSpacing='.5rem' color='white' sx={{ display: 'flex', justifyContent: 'center', mb: '5rem' }}>
                     Skills

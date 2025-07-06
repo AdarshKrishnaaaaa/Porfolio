@@ -25,9 +25,10 @@ function Projects() {
                 }}
             >
                 <motion.div
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, ease: "easeOut" }}
+                    initial={{ opacity: 0, y: -30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
                 >
                     <Typography variant="h4" letterSpacing='.5rem' sx={{ mb: '5rem' }}>
                         Projects
@@ -77,9 +78,10 @@ function Projects() {
                     }].map((project, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, scale: 0 }}
+                            initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, ease: "easeOut" }}
+                            transition={{ duration: 0.8, delay: index * 0.2 }}
+                            viewport={{ once: true }}
                         >
                             <ProjectCard {...project} />
                         </motion.div>
