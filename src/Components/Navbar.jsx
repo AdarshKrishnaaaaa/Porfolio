@@ -60,6 +60,7 @@ function NavigationBar() {
           <Typography
             variant="h5"
             component={'a'}
+            className='logo'
             href='/'
             sx={{
               fontWeight: 'bold',
@@ -67,7 +68,7 @@ function NavigationBar() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               display: 'inline-block',
-              cursor:'pointer'
+              cursor: 'pointer'
             }}
           >
             AK

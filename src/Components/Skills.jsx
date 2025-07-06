@@ -20,10 +20,9 @@ const SkillsSection = () => {
     return (
         <Box sx={{ p: 10 }}>
             <motion.div
-                initial={{ opacity: 0, y: -30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
             >
                 <Typography variant="h4" letterSpacing='.5rem' color='white' sx={{ display: 'flex', justifyContent: 'center', mb: '5rem' }}>
                     Skills
@@ -31,46 +30,53 @@ const SkillsSection = () => {
 
             </motion.div>
 
-            <Box
-                sx={{
-                    p: '1rem',
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: 2,
-                    justifyContent: 'center',
-                    mt: 3,
-                }}
+            <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
             >
-                {skills.map((skill) => (
-                    <Chip
-                        key={skill.name}
-                        label={
-                            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                                <img
-                                    src={skill.logo}
-                                    alt={skill.name}
-                                    style={{ width: 50, height: 50 }}
-                                />
-                                {skill.name}
-                            </Box>
-                        }
-                        sx={{
-                            backgroundColor: 'transparent',
-                            fontWeight: 700,
-                            px: 4.5,
-                            py: 3.5,
-                            borderRadius: '20px',
-                            fontSize: '0.95rem',
-                            transition: '0.3s',
-                            color:'white',
-                            '&:hover': {
-                                background: 'linear-gradient(to top, #03181F, #319CB5)',
+
+                <Box
+                    sx={{
+                        p: '1rem',
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        gap: 2,
+                        justifyContent: 'center',
+                        mt: 3,
+                    }}
+                >
+                    {skills.map((skill) => (
+                        <Chip
+                            key={skill.name}
+                            label={
+                                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                                    <img
+                                        src={skill.logo}
+                                        alt={skill.name}
+                                        style={{ width: 50, height: 50 }}
+                                    />
+                                    {skill.name}
+                                </Box>
+                            }
+                            sx={{
+                                backgroundColor: 'transparent',
+                                fontWeight: 700,
+                                px: 4.5,
+                                py: 3.5,
+                                borderRadius: '20px',
+                                fontSize: '0.95rem',
+                                transition: '0.3s',
                                 color: 'white',
-                            },
-                        }}
-                    />
-                ))}
-            </Box>
+                                '&:hover': {
+                                    background: 'linear-gradient(to top, #03181F, #319CB5)',
+                                    color: 'white',
+                                },
+                            }}
+                        />
+                    ))}
+                </Box>
+            </motion.div>
         </Box>
     );
 };

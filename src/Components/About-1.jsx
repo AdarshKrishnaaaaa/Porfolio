@@ -10,10 +10,9 @@ const About = () => {
             <Container maxWidth="lg" sx={{ pt: '10rem', mt: '3rem', mb: '10rem' }}>
                 {/* About Heading */}
                 <motion.div
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1 }}
-                    viewport={{ once: true }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, ease: "easeOut" }}
                 >
                     <Typography
                         variant="h4"
@@ -29,14 +28,14 @@ const About = () => {
                     </Typography>
 
                     <Divider sx={{ my: 5, borderColor: '#319CB5' }} />
-                    
+
                 </motion.div>
 
                 {/* Image + Content */}
                 <motion.div
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.5, delay: 1.5 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <Box
                         display="flex"
