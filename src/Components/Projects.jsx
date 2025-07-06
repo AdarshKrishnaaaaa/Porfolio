@@ -1,4 +1,4 @@
-import { Box, Typography, Card, CardMedia, CardContent, CardActions, Button, Divider } from '@mui/material';
+import { Box, Typography, Card, CardMedia, CardContent, CardActions, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import weatherAppImg from '../assets/ProjectImg1.png';
 import expensioImg from '../assets/ProjectImg2.png';
@@ -31,7 +31,7 @@ function Projects() {
                     viewport={{ once: true }}
                 >
                     <Typography variant="h4" letterSpacing='.5rem' sx={{ mb: '5rem' }}>
-                        My Projects
+                        Projects
                     </Typography>
 
                 </motion.div>

@@ -86,7 +86,7 @@ function About() {
                   variant="outlined"
                   animate={{ scale: [1, 1.05, 1] }}
                   transition={{
-                    duration: 1.0,
+                    duration: .4,
                     repeat: Infinity,
                     ease: 'easeInOut'
                   }}

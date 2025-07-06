@@ -22,8 +22,8 @@ import { Link } from 'react-scroll';
 function NavigationBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const navLinks = [
-    { label: 'About', icon: <InfoIcon />, to: 'about' },
-    { label: 'Contact', icon: <PhoneIcon />, to: 'contact' },
+    { label: 'About', to: 'about' },
+    { label: 'Contact', to: 'contact' },
   ];
 
   const theme = useTheme();
@@ -58,43 +58,19 @@ function NavigationBar() {
       >
         <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Typography
-            variant="h6"
+            variant="h5"
+            component={'a'}
+            href='/'
             sx={{
-              fontFamily: 'Courier New, monospace',
-              color: '#ffffff',
-              letterSpacing: 1.5,
-              cursor: 'pointer',
-              display: 'inline-flex',
-              gap: '2px', // small gap between letters
+              fontWeight: 'bold',
+              background: 'linear-gradient(90deg, white, #319CB5)', // You can change these colors
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              display: 'inline-block',
+              cursor:'pointer'
             }}
           >
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.9 }}
-              transition={{
-                duration: 0.5,
-                ease: 'easeInOut',
-              }}
-            >
-              {text.split('').map((char, index) => (
-                <motion.span
-                  key={index}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{
-                    delay: index * 0.05, // Delay per letter (shorter delay)
-                    duration: 0.4,       // Duration for each letter's appearance
-                  }}
-                  style={{
-                    color: char.toLowerCase() === 'd' ? 'white' : '#319CB5', // First letter color change (you can adjust)
-                  }}
-                >
-                  {char}
-                </motion.span>
-              ))}
-            </motion.div>
+            AK
           </Typography>
 
           {isMobile ? (
@@ -139,7 +115,6 @@ function NavigationBar() {
                         },
                       }}
                     >
-                      {link.icon}
                       {link.label}
                     </Button>
                   </motion.div>
@@ -182,7 +157,6 @@ function NavigationBar() {
                       key={link.label}
                       sx={{ color: '#319CB5', gap: 1 }}
                     >
-                      {link.icon}
                       <ListItemText
                         primary={link.label}
                         primaryTypographyProps={{

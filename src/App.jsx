@@ -7,6 +7,7 @@ import Intro from './Components/Intro';
 import Projects from './Components/Projects';
 import MyDetails from './Components/Details';
 import { useEffect } from 'react';
+import SkillsSection from './Components/Skills';
 
 function App() {
   useEffect(() => {
@@ -14,7 +15,7 @@ function App() {
   }, []);
   return (
     <div className='App'>
-      <div className="wrapper">
+      {/* <div className="wrapper">
         <span></span>
         <span></span>
         <span></span>
@@ -25,12 +26,13 @@ function App() {
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </div> */}
       <NavigationBar />
       <Intro />
       <About1/>
       <About2/>
       <Projects/>
+      <SkillsSection/>
       <MyDetails/>
     </div>
   )
