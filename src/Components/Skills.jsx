@@ -21,8 +21,8 @@ const SkillsSection = () => {
         <Box sx={{ pt: '10rem', mt: '3rem', mb: '10rem' }}>
             <motion.div
                 initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.5, delay: 1.5 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.5, delay: 1.5 }}
             >
                 <Typography variant="h4" letterSpacing='.5rem' color='white' sx={{ display: 'flex', justifyContent: 'center', mb: '5rem' }}>
                     Skills
@@ -31,10 +31,10 @@ const SkillsSection = () => {
             </motion.div>
 
             <motion.div
-               initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8}}
-                            viewport={{ once: true }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
             >
 
                 <Box
@@ -70,8 +70,11 @@ const SkillsSection = () => {
                                 transition: '0.3s',
                                 color: 'white',
                                 '&:hover': {
-                                    background: 'linear-gradient(to top, #03181F, #319CB5)',
+                                    background: 'linear-gradient(135deg, rgba(49, 156, 181, 0.4), rgba(3, 24, 31, 0.4))',
                                     color: 'white',
+                                    border: '.5px solid rgba(204, 245, 254, 0.8)',
+                                    boxShadow: '0 12px 35px rgba(0, 255, 255, 0.4)',
+
                                 },
                             }}
                         />

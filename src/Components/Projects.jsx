@@ -97,16 +97,36 @@ function ProjectCard({ title, description, image, link, live }) {
         <Card
             sx={{
                 width: { xs: '20rem', sm: '35rem', md: '24rem' },
-                background: 'linear-gradient(to top, #03181F, #319CB5)',
+                background: 'rgba(3, 24, 31, 0.7)', // Semi-transparent for glass effect
+                backdropFilter: 'blur(10px)', // Blur for glassmorphism
+                border: '1px solid rgba(255, 255, 255, 0.2)',
                 color: 'white',
                 borderRadius: 5,
                 overflow: 'hidden',
                 display: 'flex',
                 flexDirection: 'column',
+                boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
+                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                '&:hover': {
+                    transform: 'scale(1.03)',
+                    boxShadow: '0 12px 35px rgba(0, 255, 255, 0.4)',
+                    border: '1px solid rgba(204, 245, 254, 0.8)'
+                },
             }}
         >
-            <CardMedia component="img" height="180" image={image} alt={title} />
-            <CardContent >
+            <CardMedia
+                component="img"
+                height="180"
+                image={image}
+                alt={title}
+                sx={{
+                    transition: 'transform 0.3s ease',
+                    '&:hover': {
+                        transform: 'scale(1.05)',
+                    },
+                }}
+            />
+            <CardContent>
                 <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
                     {title}
                 </Typography>
@@ -121,7 +141,15 @@ function ProjectCard({ title, description, image, link, live }) {
                         size="small"
                         href={live}
                         target="_blank"
-                        sx={{ background: ' #CCF5FE', color: 'black' }}
+                        sx={{
+                            background: 'linear-gradient(90deg, #319CB5, #CCF5FE)',
+                            color: 'black',
+                            fontWeight: 'bold',
+                            boxShadow: '0 3px 8px rgba(0,0,0,0.2)',
+                            '&:hover': {
+                                background: 'linear-gradient(90deg, #267F8E, #B6EAF5)',
+                            },
+                        }}
                     >
                         View Live Site
                     </Button>
@@ -133,7 +161,15 @@ function ProjectCard({ title, description, image, link, live }) {
                         size="small"
                         href={link}
                         target="_blank"
-                        sx={{ color: '#CCF5FE', border: '#CCF5FE solid 1px' }}
+                        sx={{
+                            color: '#CCF5FE',
+                            border: '1px solid #CCF5FE',
+                            fontWeight: 'bold',
+                            '&:hover': {
+                                background: 'rgba(204, 245, 254, 0.1)',
+                                border: '1px solid #B6EAF5',
+                            },
+                        }}
                     >
                         View Source Code
                     </Button>

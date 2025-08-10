@@ -81,7 +81,7 @@ function About() {
               }}>
                 Passionate Developer Ready to Take On New Challenges
               </Typography>
-              <a href="/Resume.pdf" download="Adarsh Resume.pdf" style={{ textDecoration: 'none' }}>
+              <a href="/Adarsh_Krishna-FullStack.pdf" download="Adarsh Resume.pdf" style={{ textDecoration: 'none' }}>
                 <MotionButton
                   variant="outlined"
                   animate={{ scale: [1, 1.05, 1] }}
@@ -123,45 +123,67 @@ function About() {
               viewport={{ once: true }}
             >
               <Box
-                component="section"
-                sx={{
-                  width: { xs: '20rem', sm: '35rem', md: '40rem', lg: '35rem' },
-                  minHeight: '11.5rem',
-                  borderRadius: '2rem',
-                  overflow: 'hidden',
-                  background: 'linear-gradient(to top, #03181F, #319CB5)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  position: 'relative',
-                  zIndex: 1,
-                  p: 2
-                }}
-              >
-                <Typography
-                  variant='body1'
-                  sx={{
-                    textAlign: 'center',
-                    color: 'white',
-                    fontSize: { xs: '14px', sm: '17px', md: '17px' },
-                    mt: 1,
-                  }}
-                >
-                  {text}
-                </Typography>
-                <Typography
-                  sx={{
-                    textAlign: 'center',
-                    color: 'white',
-                    fontSize: { xs: '22px', sm: '26px', md: '34px' },
-                    fontWeight: 'bold',
-                    wordBreak: 'break-word',
-                  }}
-                >
-                  {cardProps.cardHeadings[index]}
-                </Typography>
-              </Box>
+  component="section"
+  sx={{
+    width: { xs: '20rem', sm: '35rem', md: '40rem', lg: '35rem' },
+    minHeight: '11.5rem',
+    borderRadius: '2rem',
+    overflow: 'hidden',
+    background: 'rgba(3, 24, 31, 0.5)', // Glass effect
+    backdropFilter: 'blur(12px)',
+    border: '2px solid rgba(255, 255, 255, 0.15)',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    p: 2,
+    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
+    transition: 'all 0.3s ease',
+    '&:hover': {
+      transform: 'translateY(-5px)',
+      boxShadow: '0 12px 35px rgba(0, 255, 255, 0.4)',
+      border: '2px solid rgba(204, 245, 254, 0.8)',
+    },
+    '&::before': {
+      content: '""',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      background: 'linear-gradient(135deg, rgba(49, 156, 181, 0.4), rgba(3, 24, 31, 0.4))',
+      zIndex: 0,
+    }
+  }}
+>
+  <Typography
+    variant='body1'
+    sx={{
+      textAlign: 'center',
+      color: '#CCF5FE',
+      fontSize: { xs: '14px', sm: '17px', md: '17px' },
+      mt: 1,
+      zIndex: 1,
+    }}
+  >
+    {text}
+  </Typography>
+  <Typography
+    sx={{
+      textAlign: 'center',
+      color: 'white',
+      fontSize: { xs: '22px', sm: '26px', md: '34px' },
+      fontWeight: 'bold',
+      wordBreak: 'break-word',
+      textShadow: '0 0 2px rgba(204, 245, 254, 0.7)',
+      zIndex: 1,
+    }}
+  >
+    {cardProps.cardHeadings[index]}
+  </Typography>
+</Box>
+
             </motion.div>
           ))}
 

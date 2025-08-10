@@ -10,30 +10,20 @@ import { useEffect } from 'react';
 import SkillsSection from './Components/Skills';
 
 function App() {
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className='App'>
-      {/* <div className="wrapper">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </div> */}
       <NavigationBar />
       <Intro />
-      <About1/>
-      <About2/>
-      <Projects/>
-      <SkillsSection/>
-      <MyDetails/>
+      <About1 />
+      <About2 />
+      <Projects />
+      <SkillsSection />
+      <MyDetails />
     </div>
   )
 }
