@@ -176,7 +176,6 @@ function About() {
       fontSize: { xs: '22px', sm: '26px', md: '34px' },
       fontWeight: 'bold',
       wordBreak: 'break-word',
-      textShadow: '0 0 2px rgba(204, 245, 254, 0.7)',
       zIndex: 1,
     }}
   >
