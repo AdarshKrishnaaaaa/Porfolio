@@ -51,7 +51,7 @@ function Intro() {
                     fontSize: { xs: '38px', sm: '62px', md: '80px' },
                   }}
                 >
-                  FullStack Developer
+                  MERN Stack Developer
                 </Typography>
               </motion.div>
 

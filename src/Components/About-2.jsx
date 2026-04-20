@@ -97,7 +97,7 @@ function About() {
                 Passionate Developer Ready to Take On New Challenges
               </Typography>
               <a
-                href="/Adarsh_Krishna-FullStack.pdf"
+                href="/Adarsh_Krishna-MERN.pdf"
                 download="Adarsh Resume.pdf"
                 style={{ textDecoration: "none" }}
               >
