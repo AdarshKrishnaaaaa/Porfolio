@@ -30,7 +30,7 @@ function Intro() {
             transition={{ duration: 1 }}
           >
             <Box component="section" sx={{ p: 2, position: 'relative', zIndex: 1 }}>
-              <Typography variant="h1" sx={{ textAlign: 'center', fontWeight: 'bold', color: '#CCF5FE', fontSize: { xs: '27px', sm: '42px', md: '60px' } }}>
+              <Typography variant="h1" sx={{ textAlign: 'center', fontWeight: 'bold', color: '#CCF5FE', fontSize: { xs: '32px', sm: '42px', md: '60px' } }}>
                 Hi, I'm Adarsh
               </Typography>
               <motion.div
@@ -48,14 +48,14 @@ function Intro() {
                   sx={{
                     textAlign: 'center',
                     fontWeight: 'bold',
-                    fontSize: { xs: '38px', sm: '62px', md: '80px' },
+                    fontSize: { xs: '45px', sm: '62px', md: '80px' },
                   }}
                 >
                   MERN Stack Developer
                 </Typography>
               </motion.div>
 
-              <Typography variant="h1" sx={{ textAlign: 'center', fontWeight: 'bold', color: '#CCF5FE', fontSize: { xs: '16px', sm: '32px', md: '40px' } }}>
+              <Typography variant="h1" sx={{ textAlign: 'center', fontWeight: 'bold', color: '#CCF5FE', fontSize: { xs: '21px', sm: '32px', md: '40px' } }}>
                 Based in India.
               </Typography>
             </Box>
