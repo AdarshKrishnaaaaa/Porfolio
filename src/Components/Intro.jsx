@@ -48,7 +48,7 @@ function Intro() {
                   sx={{
                     textAlign: 'center',
                     fontWeight: 'bold',
-                    fontSize: { xs: '45px', sm: '62px', md: '80px' },
+                    fontSize: { xs: '47px', sm: '62px', md: '80px' },
                   }}
                 >
                   MERN Stack Developer
