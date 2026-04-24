@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -9,6 +9,7 @@ import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemText from "@mui/material/ListItemText";
+import ListItemButton from "@mui/material/ListItemButton";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import useMediaQuery from "@mui/material/useMediaQuery";
@@ -17,9 +18,12 @@ import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 
 import { Link } from "react-scroll";
+import LikeButton from "./LikeButton";
 
 function NavigationBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0); // FIX
+
   const navLinks = [
     { label: "About", to: "about" },
     { label: "Contact", to: "contact" },
@@ -27,16 +31,6 @@ function NavigationBar() {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
-
-  const words = ["Web Developer", "Software Developer"];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, 3000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   function closeNav() {
     setDrawerOpen(false);
@@ -57,7 +51,6 @@ function NavigationBar() {
           <Typography
             variant="h5"
             component={"a"}
-            className="logo"
             href="/"
             sx={{
               fontWeight: "bold",
@@ -67,19 +60,12 @@ function NavigationBar() {
               textDecoration: "none",
             }}
           >
-            <Box
-              component="img"
-              src={logo}
-              alt="Logo"
-              sx={{
-                height: 25,
-                width: "auto",
-              }}
-            />
+            <Box component="img" src={logo} alt="Logo" sx={{ height: 25 }} />
           </Typography>
 
-          {isMobile ? (
-            <>
+          <Stack direction="row" alignItems="center">
+            <LikeButton />
+            {isMobile ? (
               <IconButton
                 edge="end"
                 color="inherit"
@@ -87,51 +73,50 @@ function NavigationBar() {
               >
                 <MenuIcon />
               </IconButton>
-            </>
-          ) : (
-            <Stack direction="row" spacing={3}>
-              {navLinks.map((link, index) => (
-                <Link
-                  to={link.to}
-                  smooth={true}
-                  duration={500}
-                  key={link.label}
-                >
-                  <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
+            ) : (
+              <Stack direction="row" spacing={3}>
+                {navLinks.map((link, index) => (
+                  <Link
+                    to={link.to}
+                    smooth={true}
+                    duration={500}
+                    key={link.label} // ✅ FIX
                   >
-                    <Button
-                      sx={{
-                        color: "#ffffff",
-                        textTransform: "capitalize",
-                        fontWeight: 500,
-                        fontSize: "1rem",
-                        gap: 1,
-                        position: "relative",
-                        "&::before": {
-                          content: '""',
-                          position: "absolute",
-                          bottom: 0,
-                          left: 0,
-                          width: "0%",
-                          height: "1px",
-                          backgroundColor: "#319CB5",
-                          transition: "width 0.3s ease",
-                        },
-                        "&:hover::before": {
-                          width: "100%",
-                        },
-                      }}
+                    <motion.div
+                      initial={{ opacity: 0, x: 50 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.4, delay: index * 0.1 }}
                     >
-                      {link.label}
-                    </Button>
-                  </motion.div>
-                </Link>
-              ))}
-            </Stack>
-          )}
+                      <Button
+                        sx={{
+                          color: "#ffffff",
+                          textTransform: "capitalize",
+                          fontWeight: 500,
+                          fontSize: "1rem",
+                          position: "relative",
+                          "&::before": {
+                            content: '""',
+                            position: "absolute",
+                            bottom: 0,
+                            left: 0,
+                            width: "0%",
+                            height: "1px",
+                            backgroundColor: "#319CB5",
+                            transition: "width 0.3s ease",
+                          },
+                          "&:hover::before": {
+                            width: "100%",
+                          },
+                        }}
+                      >
+                        {link.label}
+                      </Button>
+                    </motion.div>
+                  </Link>
+                ))}
+              </Stack>
+            )}
+          </Stack>
         </Toolbar>
       </AppBar>
 
@@ -150,18 +135,19 @@ function NavigationBar() {
         <Box sx={{ width: 150, mt: 2 }}>
           <List>
             {navLinks.map((link, index) => (
-              <Link to={link.to} smooth={true} duration={500}>
+              <Link
+                to={link.to}
+                smooth={true}
+                duration={500}
+                key={link.label} // ✅ FIX
+              >
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
-                  <ListItem button key={link.label} onClick={closeNav}>
-                    <ListItem
-                      button
-                      key={link.label}
-                      sx={{ color: "#319CB5", gap: 1 }}
-                    >
+                  <ListItem disablePadding>
+                    <ListItemButton onClick={closeNav}>
                       <ListItemText
                         primary={link.label}
                         primaryTypographyProps={{
@@ -170,7 +156,7 @@ function NavigationBar() {
                           color: "white",
                         }}
                       />
-                    </ListItem>
+                    </ListItemButton>
                   </ListItem>
                 </motion.div>
               </Link>
