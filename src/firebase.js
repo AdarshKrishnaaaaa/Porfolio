@@ -14,6 +14,6 @@ export const db = getFirestore(app);
 
 // Anonymous Auth
 export const auth = getAuth(app);
-
+ 
 // auto login silently
 signInAnonymously(auth).catch(console.error);
