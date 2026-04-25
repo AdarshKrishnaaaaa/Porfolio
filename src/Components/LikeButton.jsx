@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
-import { db } from "../firebase";
-import { doc, onSnapshot, updateDoc, increment } from "firebase/firestore";
+import { db, auth } from "../firebase";
+import {
+  doc,
+  onSnapshot,
+  updateDoc,
+  increment,
+  deleteField,
+} from "firebase/firestore";
 
 import { Box, IconButton, Typography, Tooltip, Fade } from "@mui/material";
 import FavoriteIcon from "@mui/icons-material/Favorite";
@@ -14,23 +20,31 @@ export default function LikeButton() {
 
   const likeRef = doc(db, "likes", "portfolio");
 
-  useEffect(() => {
-    const saved = localStorage.getItem("liked");
-    if (saved === "true") setLiked(true);
+  // Get current user id
+  const userId = auth.currentUser?.uid;
 
+  // Realtime data
+  useEffect(() => {
     const unsubscribe = onSnapshot(likeRef, (snapshot) => {
       if (snapshot.exists()) {
-        setCount(snapshot.data().count);
+        const data = snapshot.data();
+        setCount(data.count || 0);
+
+        // check if this user liked
+        if (userId && data.likes) {
+          setLiked(!!data.likes[userId]);
+        }
       }
     });
 
     return () => unsubscribe();
-  }, []);
+  }, [userId]);
 
+  // Count animation (only visual)
   useEffect(() => {
     let start = 0;
 
-    const duration = 500; // animation time
+    const duration = 500;
     const incrementTime = 20;
     const step = Math.ceil(count / (duration / incrementTime));
 
@@ -48,22 +62,27 @@ export default function LikeButton() {
     return () => clearInterval(counter);
   }, [count]);
 
+  // Like / Unlike (per user)
   const handleLike = async () => {
+    if (!userId) return;
+
     try {
       if (liked) {
+        // Unlike
         await updateDoc(likeRef, {
+          [`likes.${userId}`]: deleteField(),
           count: increment(-1),
         });
 
         setLiked(false);
-        localStorage.setItem("liked", "false");
       } else {
+        // Like
         await updateDoc(likeRef, {
+          [`likes.${userId}`]: true,
           count: increment(1),
         });
 
         setLiked(true);
-        localStorage.setItem("liked", "true");
 
         setAnimate(true);
         setTimeout(() => setAnimate(false), 400);
@@ -89,6 +108,7 @@ export default function LikeButton() {
         TransitionComponent={Fade}
       >
         <Box sx={{ position: "relative" }}>
+          {/* Ripple */}
           {animate && (
             <Box
               sx={{
@@ -128,7 +148,6 @@ export default function LikeButton() {
               <FavoriteBorderIcon
                 sx={{
                   color: "#fff",
-                  transform: "scale(1)",
                   transition: "all 0.3s ease",
                 }}
               />
