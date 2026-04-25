@@ -163,10 +163,10 @@ export default function LikeButton() {
           fontSize: "1.2rem",
           fontWeight: 500,
           ml: 0.5,
-        }}
+        }} 
       >
         {displayCount}
-      </Typography>
+      </Typography> 
     </Box>
   );
 }
