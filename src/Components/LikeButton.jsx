@@ -152,14 +152,14 @@ export default function LikeButton() {
                 }}
               />
             )}
-          </IconButton>
+          </IconButton> 
         </Box>
       </Tooltip>
 
       {/* Count */}
       <Typography
         sx={{
-          color: liked ? "#9e9e9e" : "#ffffff",
+          color: liked ? "#9e9e9e" : "#ffffff", 
           fontSize: "1.2rem",
           fontWeight: 500,
           ml: 0.5,
