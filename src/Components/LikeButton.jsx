@@ -31,7 +31,7 @@ export default function LikeButton() {
         setCount(data.count || 0);
 
         // check if this user liked
-        if (userId && data.likes) {
+        if (userId && data.likes) { 
           setLiked(!!data.likes[userId]);
         }
       }

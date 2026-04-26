@@ -13,7 +13,7 @@ const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 
 // Anonymous Authentication
-export const auth = getAuth(app);
+export const auth = getAuth(app); 
  
 // auto login silently
 signInAnonymously(auth).catch(console.error);
