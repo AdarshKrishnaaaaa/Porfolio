@@ -108,7 +108,6 @@ export default function LikeButton() {
         TransitionComponent={Fade}
       >
         <Box sx={{ position: "relative" }}>
-          {/* Ripple. */}
           {animate && (
             <Box
               sx={{
