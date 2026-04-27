@@ -10,10 +10,9 @@ const About = () => {
       <Container maxWidth="lg" sx={{ pt: "10rem", mt: "3rem", mb: "10rem" }}>
         {/* About Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
         >
           <Typography
             variant="h4"

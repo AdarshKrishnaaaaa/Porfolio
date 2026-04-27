@@ -43,30 +43,39 @@ function About() {
               zIndex: "1",
               position: "relative",
               display: "flex",
+
+              /* 🔥 BACKGROUND IMAGE */
+              backgroundImage: `url(${aboutCardImg})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+
               boxShadow: "0 8px 25px rgba(0, 0, 0, 0.3)",
               transition: "all 0.3s ease",
               "&:hover": {
-                transform: "translateY(-5px)",
+                transform: "translateY(-5px) scale(1.01)",
                 boxShadow: "0 12px 35px rgba(0, 255, 255, 0.4)",
                 border: "2px solid rgba(204, 245, 254, 0.8)",
               },
             }}
           >
-            <img
-              src={aboutCardImg}
-              alt="About card"
-              style={{
-                width: "40rem",
-                height: "100%",
-                objectFit: "cover",
+            {/* 🔥 OVERLAY */}
+            <Box
+              sx={{
                 position: "absolute",
-                top: 0,
-                left: 0,
-                zIndex: -1,
-                display: "flex",
+                inset: 0,
+                background: `
+                  linear-gradient(
+                    to top,
+                    rgba(3,24,31,0.95) 0%,
+                    rgba(3,24,31,0.75) 50%,
+                    rgba(3,24,31,0.4) 100%
+                  )
+                `,
               }}
             />
 
+            {/* CONTENT */}
             <Box
               sx={{
                 position: "absolute",
@@ -76,15 +85,20 @@ function About() {
                 color: "white",
                 p: 4,
                 textAlign: "start",
+                zIndex: 1,
               }}
             >
               <Typography
                 variant="body1"
-                sx={{ mb: 1, fontSize: { xs: "13px", sm: "17px", md: "17px" } }}
+                sx={{
+                  mb: 1,
+                  fontSize: { xs: "13px", sm: "17px", md: "17px" },
+                }}
               >
                 Skilled MERN stack developer with hands-on experience in over 5
                 projects.
               </Typography>
+
               <Typography
                 sx={{
                   fontWeight: "bold",
@@ -96,6 +110,7 @@ function About() {
               >
                 Passionate Developer Ready to Take On New Challenges
               </Typography>
+
               <a
                 href="/Adarsh_Krishna-MERN.pdf"
                 download="Adarsh Resume.pdf"
@@ -144,11 +159,16 @@ function About() {
               <Box
                 component="section"
                 sx={{
-                  width: { xs: "20rem", sm: "35rem", md: "40rem", lg: "35rem" },
+                  width: {
+                    xs: "20rem",
+                    sm: "35rem",
+                    md: "40rem",
+                    lg: "35rem",
+                  },
                   minHeight: "11.5rem",
                   borderRadius: "2rem",
                   overflow: "hidden",
-                  background: "rgba(3, 24, 31, 0.5)", // Glass effect
+                  background: "rgba(3, 24, 31, 0.5)",
                   backdropFilter: "blur(12px)",
                   border: "2px solid rgba(255, 255, 255, 0.15)",
                   display: "flex",
@@ -189,6 +209,7 @@ function About() {
                 >
                   {text}
                 </Typography>
+
                 <Typography
                   sx={{
                     textAlign: "center",

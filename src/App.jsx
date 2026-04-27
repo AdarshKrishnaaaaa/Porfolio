@@ -8,6 +8,7 @@ import Projects from './Components/Projects';
 import MyDetails from './Components/Details';
 import { useEffect } from 'react';
 import SkillsSection from './Components/Skills';
+import Experience from './Components/Experience';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
       <Intro />
       <About1 />
       <About2 />
+      <Experience/>
       <Projects />
       <SkillsSection />
       <MyDetails />

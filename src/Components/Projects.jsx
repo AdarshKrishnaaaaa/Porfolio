@@ -1,182 +1,233 @@
-import { Box, Typography, Card, CardMedia, CardContent, CardActions, Button } from '@mui/material';
-import { motion } from 'framer-motion';
-import weatherAppImg from '../assets/ProjectImg1.png';
-import expensioImg from '../assets/ProjectImg2.png';
-import appStoreImg from '../assets/ProjectImg3.png';
-import helloWorldAppImg from '../assets/ProjectImg4.png';
-import { Element } from 'react-scroll';
+import {
+  Box,
+  Typography,
+  Card,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Button,
+  Chip,
+} from "@mui/material";
+import { motion } from "framer-motion";
+import { Element } from "react-scroll";
+
+import weatherAppImg from "../assets/ProjectImg1.png";
+import expensioImg from "../assets/ProjectImg2.png";
+import appStoreImg from "../assets/ProjectImg3.png";
+import helloWorldAppImg from "../assets/ProjectImg4.png";
 
 function Projects() {
-    return (
-        <Element name='project'>
-            <Box
-                component="section"
-                sx={{
-                    color: 'white',
-                    py: 15,
-                    px: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                    gap: 4,
-                    mt: 10,
-                    position: 'relative',
-                    zIndex: 1
-                }}
+  return (
+    <Element name="project">
+      <Box
+        sx={{
+          color: "white",
+          py: 15,
+          px: 2,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          mt: 10,
+        }}
+      >
+        {/* Title */}
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <Typography variant="h4" letterSpacing=".5rem" sx={{ mb: 10 }}>
+            Projects
+          </Typography>
+        </motion.div>
+
+        {/* Cards */}
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: 4,
+          }}
+        >
+          {[
+            {
+              title: "Weather App",
+              description:
+                "Real-time weather updates with live API integration.",
+              image: weatherAppImg,
+              tech: ["HTML", "CSS", "Javascript", "API"],
+              live: "https://weather-app-kappa-six-78.vercel.app/",
+              //   link: "https://github.com/AdarshKrishnaaaaa/WeatherApp",
+            },
+            {
+              title: "Expensio",
+              description: "Track and analyze daily expenses with smart UI.",
+              image: expensioImg,
+              tech: ["HTML", "CSS", "Javascript", "Bootstrap", "TailwindCSS"],
+              live: "https://expense-tracker-seven-phi-24.vercel.app/",
+              //   link: "https://github.com/AdarshKrishnaaaaa/Expense-Tracker",
+            },
+            {
+              title: "App Store",
+              description: "Online product management and browsing system.",
+              image: appStoreImg,
+              tech: ["HTML", "CSS", "Javascript"],
+              live: "https://online-website-chi.vercel.app/",
+              //   link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
+            },
+            {
+              title: "Chat App",
+              description: "Real-time MERN chat with authentication & sockets.",
+              image: helloWorldAppImg,
+              tech: ["MERN", "Socket.io"],
+              live: "https://chat-app-99s1.onrender.com/",
+              //   link: "https://github.com/AdarshKrishnaaaaa/Chat-App",
+            },
+          ].map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: true }}
             >
-                <motion.div
-                    initial={{ opacity: 0, y: -30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
-                >
-                    <Typography variant="h4" letterSpacing='.5rem' sx={{ mb: '5rem' }}>
-                        Projects
-                    </Typography>
-
-                </motion.div>
-
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: { xs: 'column', md: 'row' },
-                        flexWrap: 'wrap',
-                        gap: 4,
-                        columnGap: 4,
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        zIndex: 1,
-                    }}
-                >
-                    {[{
-                        title: "Weather App",
-                        description: "Real-time weather updates, forecasts, and insights for any location.",
-                        image: weatherAppImg,
-                        live: "https://weather-app-kappa-six-78.vercel.app/",
-                        link: "https://github.com/AdarshKrishnaaaaa/WeatherApp"
-                    },
-                    {
-                        title: "Expensio",
-                        description: "A tool to record, manage, and analyze daily financial expenses efficiently.",
-                        image: expensioImg,
-                        live: 'https://expense-tracker-seven-phi-24.vercel.app/',
-                        link: 'https://github.com/AdarshKrishnaaaaa/Expense-Tracker'
-                    },
-                    {
-                        title: "App Store",
-                        description: "Easily track, manage, and control expenses for smarter financial decisions.",
-                        image: appStoreImg,
-                        live: "https://online-website-chi.vercel.app/",
-                        link: "https://github.com/AdarshKrishnaaaaa/Online-Website"
-                    },
-                    {
-                        title: "HelloWorld Chat App",
-                        description: "A real-time chat app built with the MERN stack, featuring user authentication and live messaging.",
-                        image: helloWorldAppImg,
-                        live: "https://chat-app-99s1.onrender.com/",
-                        link: "https://github.com/AdarshKrishnaaaaa/Chat-App"
-                    }].map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8, delay: index * 0.2 }}
-                            viewport={{ once: true }}
-                        >
-                            <ProjectCard {...project} />
-                        </motion.div>
-                    ))}
-                </Box>
-            </Box>
-        </Element>
-    );
+              <ProjectCard {...project} />
+            </motion.div>
+          ))}
+        </Box>
+      </Box>
+    </Element>
+  );
 }
 
-function ProjectCard({ title, description, image, link, live }) {
-    return (
-        <Card
-            sx={{
-                width: { xs: '20rem', sm: '35rem', md: '24rem' },
-                background: 'rgba(3, 24, 31, 0.7)', // Semi-transparent for glass effect
-                backdropFilter: 'blur(10px)', // Blur for glassmorphism
-                border: '1px solid rgba(255, 255, 255, 0.2)',
-                color: 'white',
-                borderRadius: 5,
-                overflow: 'hidden',
-                display: 'flex',
-                flexDirection: 'column',
-                boxShadow: '0 8px 25px rgba(0, 0, 0, 0.3)',
-                transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-                '&:hover': {
-                    transform: 'scale(1.03)',
-                    boxShadow: '0 12px 35px rgba(0, 255, 255, 0.4)',
-                    border: '1px solid rgba(204, 245, 254, 0.8)'
-                },
-            }}
+function ProjectCard({ title, description, image, tech, link, live }) {
+  return (
+    <Card
+      sx={{
+        width: { xs: "20rem", md: "24rem" },
+        borderRadius: 4,
+        overflow: "hidden",
+        background: "rgba(3, 24, 31, 0.7)",
+        backdropFilter: "blur(12px)",
+        border: "1px solid rgba(255,255,255,0.2)",
+        transition: "0.3s",
+        position: "relative",
+
+        "&:hover": {
+          transform: "translateY(-10px) scale(1.02)",
+          boxShadow: "0 0 30px rgba(0,255,255,0.5)",
+        },
+      }}
+    >
+      {/* Image with overlay */}
+      <Box sx={{ position: "relative", overflow: "hidden" }}>
+        <CardMedia
+          component="img"
+          height="220"
+          image={image}
+          alt={title}
+          sx={{
+            transition: "0.4s",
+            "&:hover": {
+              transform: "scale(1.1)",
+            },
+          }}
+        />
+
+        {/* Overlay */}
+        <Box
+          sx={{
+            position: "absolute",
+            inset: 0,
+            background: "rgba(0,0,0,0.6)",
+            opacity: 0,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 2,
+            transition: "0.3s",
+            "&:hover": { opacity: 1 },
+          }}
         >
-            <CardMedia
-                component="img"
-                height="180"
-                image={image}
-                alt={title}
-                sx={{
-                    transition: 'transform 0.3s ease',
-                    '&:hover': {
-                        transform: 'scale(1.05)',
-                    },
-                }}
+          <Button
+            variant="contained"
+            href={live}
+            target="_blank"
+            sx={{
+              background: "#CCF5FE",
+              color: "black",
+              fontWeight: "bold",
+            }}
+          >
+            Live
+          </Button>
+
+          <Button
+            variant="outlined"
+            href={link}
+            target="_blank"
+            sx={{
+              color: "#CCF5FE",
+              borderColor: "#CCF5FE",
+            }}
+          >
+            Code
+          </Button>
+        </Box>
+      </Box>
+
+      <CardContent>
+        <Typography
+          variant="h4"
+          sx={{ color: "#fff", fontWeight: "bold", textAlign: "center" }}
+        >
+          {title}
+        </Typography>
+
+        <Typography
+          variant="body2"
+          sx={{ textAlign: "center", color: "#CCF5FE", mt: 1 }}
+        >
+          {description}
+        </Typography>
+
+        {/* Tech Stack */}
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            gap: 1,
+            mt: 2,
+          }}
+        >
+          {tech.map((t, i) => (
+            <Chip
+              key={i}
+              label={t}
+              size="small"
+              sx={{
+                background: "rgba(204,245,254,0.2)",
+                color: "#ffffff",
+              }}
             />
-            <CardContent>
-                <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center' }}>
-                    {title}
-                </Typography>
-                <Typography variant="body2" sx={{ mt: 1, textAlign: 'center', color: '#CCF5FE' }}>
-                    {description}
-                </Typography>
-            </CardContent>
-            <CardActions sx={{ justifyContent: 'center', pb: 2 }}>
-                {live && (
-                    <Button
-                        variant="contained"
-                        size="small"
-                        href={live}
-                        target="_blank"
-                        sx={{
-                            background: 'linear-gradient(90deg, #319CB5, #CCF5FE)',
-                            color: 'black',
-                            fontWeight: 'bold',
-                            boxShadow: '0 3px 8px rgba(0,0,0,0.2)',
-                            '&:hover': {
-                                background: 'linear-gradient(90deg, #267F8E, #B6EAF5)',
-                            },
-                        }}
-                    >
-                        View Live Site
-                    </Button>
-                )}
-                {link && (
-                    <Button
-                        variant="outlined"
-                        color="secondary"
-                        size="small"
-                        href={link}
-                        target="_blank"
-                        sx={{
-                            color: '#CCF5FE',
-                            border: '1px solid #CCF5FE',
-                            fontWeight: 'bold',
-                            '&:hover': {
-                                background: 'rgba(204, 245, 254, 0.1)',
-                                border: '1px solid #B6EAF5',
-                            },
-                        }}
-                    >
-                        View Source Code
-                    </Button>
-                )}
-            </CardActions>
-        </Card>
-    );
+          ))}
+        </Box>
+      </CardContent>
+
+      <CardActions sx={{ justifyContent: "center", pb: 2 }}>
+        <Button
+          variant="text"
+          href={live}
+          target="_blank"
+          sx={{ color: "#CCF5FE" }}
+        >
+          View Project →
+        </Button>
+      </CardActions>
+    </Card>
+  );
 }
 
 export default Projects;
