@@ -130,25 +130,64 @@ function Experience() {
                     }}
                   >
                     <CardContent>
-                      <Typography variant="h5" fontWeight="bold">
+                      {/* ROLE */}
+                      <Typography
+                        variant="h5"
+                        fontWeight="bold"
+                        sx={{
+                          fontSize: {
+                            xs: "1.1rem",
+                            sm: "1.3rem",
+                            md: "1.5rem",
+                          },
+                        }}
+                      >
                         {exp.role}
                       </Typography>
 
-                      <Typography variant="subtitle1" sx={{ color: "#CCF5FE" }}>
+                      {/* COMPANY */}
+                      <Typography
+                        variant="subtitle1"
+                        sx={{
+                          color: "#CCF5FE",
+                          fontSize: { xs: "0.9rem", sm: "1rem", md: "1.1rem" },
+                        }}
+                      >
                         {exp.company}
                       </Typography>
 
+                      {/* DATE + LOCATION */}
                       <Typography
                         variant="body2"
-                        sx={{ mb: 1, color: "#CCF5FE" }}
+                        sx={{
+                          mb: 1,
+                          color: "#CCF5FE",
+                          fontSize: {
+                            xs: "0.75rem",
+                            sm: "0.85rem",
+                            md: "0.9rem",
+                          },
+                        }}
                       >
                         {exp.duration} | {exp.location}
                       </Typography>
 
+                      {/* POINTS */}
                       <Box component="ul" sx={{ pl: 2, color: "#CCF5FE" }}>
                         {exp.points.map((point, i) => (
                           <li key={i}>
-                            <Typography variant="body2">{point}</Typography>
+                            <Typography
+                              variant="body2"
+                              sx={{
+                                fontSize: {
+                                  xs: "0.75rem",
+                                  sm: "0.85rem",
+                                  md: "0.9rem",
+                                },
+                              }}
+                            >
+                              {point}
+                            </Typography>
                           </li>
                         ))}
                       </Box>
