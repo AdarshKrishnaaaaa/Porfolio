@@ -131,7 +131,7 @@ function About() {
                     textTransform: "capitalize",
                   }}
                 >
-                  Download Resume
+                  Download My Resume
                 </MotionButton>
               </a>
             </Box>

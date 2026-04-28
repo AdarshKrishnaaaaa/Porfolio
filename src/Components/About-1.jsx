@@ -81,7 +81,7 @@ const About = () => {
                   textAlign: { xs: "center", sm: "center", lg: "start" },
                 }}
               >
-                I am a passionate Full-Stack Web Developer specializing in the
+                A passionate Full-Stack Web Developer specializing in the
                 MERN stack, with hands-on experience building responsive and
                 scalable web applications. I completed a 6-month MERN stack
                 internship and training at Camerin Folks Pvt Ltd, where I gained
