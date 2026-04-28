@@ -1,5 +1,6 @@
 import { Box, Chip, Typography, Avatar } from "@mui/material";
 import { motion } from "framer-motion";
+import { Element } from "react-scroll";
 
 const skills = [
   {
@@ -54,73 +55,75 @@ const skills = [
 
 const SkillsSection = () => {
   return (
-    <Box sx={{ pt: "10rem", mt: "3rem", mb: "10rem" }}>
-      <motion.div
-        initial={{ opacity: 0, y: -30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <Typography
-          variant="h4"
-          letterSpacing=".5rem"
-          color="white"
-          sx={{ display: "flex", justifyContent: "center", mb: "5rem" }}
+    <Element name="skills">
+      <Box sx={{ pt: "10rem", mt: "3rem", mb: "10rem" }}>
+        <motion.div
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          Skills
-        </Typography>
-      </motion.div>
+          <Typography
+            variant="h4"
+            letterSpacing=".5rem"
+            color="white"
+            sx={{ display: "flex", justifyContent: "center", mb: "5rem" }}
+          >
+            Skills
+          </Typography>
+        </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <Box
-          sx={{
-            p: "1rem",
-            display: "flex",
-            flexWrap: "wrap",
-            gap: 2,
-            justifyContent: "center",
-            mt: 3,
-          }}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          {skills.map((skill) => (
-            <Chip
-              key={skill.name}
-              label={
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
-                  <img
-                    src={skill.logo}
-                    alt={skill.name}
-                    style={{ width: 50, height: 50 }}
-                  />
-                  {skill.name}
-                </Box>
-              }
-              sx={{
-                backgroundColor: "transparent",
-                fontWeight: 700,
-                px: 4.5,
-                py: 3.5,
-                borderRadius: "20px",
-                fontSize: "0.95rem",
-                transition: "0.3s",
-                color: "white",
-                "&:hover": {
-                  background:
-                    "linear-gradient(135deg, rgba(49, 156, 181, 0.4), rgba(3, 24, 31, 0.4))",
+          <Box
+            sx={{
+              p: "1rem",
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 2,
+              justifyContent: "center",
+              mt: 3,
+            }}
+          >
+            {skills.map((skill) => (
+              <Chip
+                key={skill.name}
+                label={
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+                    <img
+                      src={skill.logo}
+                      alt={skill.name}
+                      style={{ width: 50, height: 50 }}
+                    />
+                    {skill.name}
+                  </Box>
+                }
+                sx={{
+                  backgroundColor: "transparent",
+                  fontWeight: 700,
+                  px: 4.5,
+                  py: 3.5,
+                  borderRadius: "20px",
+                  fontSize: "0.95rem",
+                  transition: "0.3s",
                   color: "white",
-                  border: ".5px solid rgba(204, 245, 254, 0.8)",
-                  boxShadow: "0 12px 35px rgba(0, 255, 255, 0.4)",
-                },
-              }}
-            />
-          ))}
-        </Box>
-      </motion.div>
-    </Box>
+                  "&:hover": {
+                    background:
+                      "linear-gradient(135deg, rgba(49, 156, 181, 0.4), rgba(3, 24, 31, 0.4))",
+                    color: "white",
+                    border: ".5px solid rgba(204, 245, 254, 0.8)",
+                    boxShadow: "0 12px 35px rgba(0, 255, 255, 0.4)",
+                  },
+                }}
+              />
+            ))}
+          </Box>
+        </motion.div>
+      </Box>
+    </Element>
   );
 };
 
