@@ -77,7 +77,7 @@ function Projects() {
               link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
             },
             {
-              title: "Chat App",
+              title: "HelloWorld",
               description: "Real-time MERN chat with authentication & sockets.",
               image: helloWorldAppImg,
               tech: ["MERN", "Socket.io"],
