@@ -81,25 +81,15 @@ const About = () => {
                   textAlign: { xs: "center", sm: "center", lg: "start" },
                 }}
               >
-                I’m a passionate MERN Stack Developer with hands-on experience
-                in building full-stack web applications using React.js, Node.js,
-                Express.js, and MongoDB. I enjoy creating scalable, responsive,
-                and user-friendly applications that solve real-world problems. I
-                have completed my BCA degree and a Full Stack Development
-                training at Camerin Folks Pvt Ltd, where I also gained practical
-                experience as a MERN Stack Developer Intern. During this time, I
-                worked on real-world projects and developed strong skills in API
-                development, CRUD operations, and application architecture. I
-                also have experience working as an RPA Developer, which helped
-                me understand automation and professional workflows. I have
-                built projects such as a real-time chat application, weather
-                forecast app, and an expense tracker, which helped me strengthen
-                my problem-solving skills and technical knowledge. I’m a quick
-                learner and a team player who enjoys working on challenging
-                problems and continuously improving my skills. I am currently
-                seeking an opportunity to start my career as a software engineer
-                and contribute to building efficient and impactful web
-                applications.
+                I am a passionate Full-Stack Web Developer specializing in the
+                MERN stack, with hands-on experience building responsive and
+                scalable web applications. I completed a 6-month MERN stack
+                internship and training at Camerin Folks Pvt Ltd, where I gained
+                practical experience in real-world development. I have strong
+                skills in developing RESTful APIs, managing databases, and
+                creating efficient front-end and back-end solutions. I focus on
+                writing clean, maintainable code and enjoy solving real-world
+                problems while working in Agile environments.
               </Typography>
             </Box>
           </Box>

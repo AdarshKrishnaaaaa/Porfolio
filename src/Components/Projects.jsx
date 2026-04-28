@@ -58,7 +58,7 @@ function Projects() {
               image: weatherAppImg,
               tech: ["HTML", "CSS", "Javascript", "API"],
               live: "https://weather-app-kappa-six-78.vercel.app/",
-              //   link: "https://github.com/AdarshKrishnaaaaa/WeatherApp",
+              link: "https://github.com/AdarshKrishnaaaaa/WeatherApp",
             },
             {
               title: "Expensio",
@@ -66,7 +66,7 @@ function Projects() {
               image: expensioImg,
               tech: ["HTML", "CSS", "Javascript", "Bootstrap", "TailwindCSS"],
               live: "https://expense-tracker-seven-phi-24.vercel.app/",
-              //   link: "https://github.com/AdarshKrishnaaaaa/Expense-Tracker",
+              link: "https://github.com/AdarshKrishnaaaaa/Expense-Tracker",
             },
             {
               title: "App Store",
@@ -74,7 +74,7 @@ function Projects() {
               image: appStoreImg,
               tech: ["HTML", "CSS", "Javascript"],
               live: "https://online-website-chi.vercel.app/",
-              //   link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
+              link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
             },
             {
               title: "Chat App",
@@ -82,7 +82,7 @@ function Projects() {
               image: helloWorldAppImg,
               tech: ["MERN", "Socket.io"],
               live: "https://chat-app-99s1.onrender.com/",
-              //   link: "https://github.com/AdarshKrishnaaaaa/Chat-App",
+              link: "https://github.com/AdarshKrishnaaaaa/Chat-App",
             },
           ].map((project, index) => (
             <motion.div
@@ -150,19 +150,6 @@ function ProjectCard({ title, description, image, tech, link, live }) {
             "&:hover": { opacity: 1 },
           }}
         >
-          <Button
-            variant="contained"
-            href={live}
-            target="_blank"
-            sx={{
-              background: "#CCF5FE",
-              color: "black",
-              fontWeight: "bold",
-            }}
-          >
-            Live
-          </Button>
-
           <Button
             variant="outlined"
             href={link}
