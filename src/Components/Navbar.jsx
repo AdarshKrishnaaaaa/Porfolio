@@ -22,7 +22,7 @@ import LikeButton from "./LikeButton";
 
 function NavigationBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0); // FIX
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const navLinks = [
     { label: "About", to: "about" },
@@ -82,7 +82,7 @@ function NavigationBar() {
                     to={link.to}
                     smooth={true}
                     duration={500}
-                    key={link.label} // ✅ FIX
+                    key={link.label}
                   >
                     <motion.div
                       initial={{ opacity: 0, x: 50 }}
@@ -91,7 +91,7 @@ function NavigationBar() {
                     >
                       <Button
                         sx={{
-                          color: "#ffffff",
+                          color: "#fff",
                           textTransform: "capitalize",
                           fontWeight: 500,
                           fontSize: "1rem",
@@ -141,7 +141,7 @@ function NavigationBar() {
                 to={link.to}
                 smooth={true}
                 duration={500}
-                key={link.label} // ✅ FIX
+                key={link.label}
               >
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
