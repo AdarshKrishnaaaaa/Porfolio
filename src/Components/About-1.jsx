@@ -76,7 +76,7 @@ const About = () => {
                 variant="body1"
                 sx={{
                   mt: 2,
-                  lineHeight: 1.8,
+                  lineHeight: 2,
                   color: "#CCF5FE",
                   textAlign: { xs: "center", sm: "center", lg: "start" },
                 }}
