@@ -7,7 +7,7 @@ const experiences = [
   {
     role: "RPA Developer",
     company: "ClaySys Technologies",
-    duration: "Oct 2025 – Present",
+    duration: "Oct 2025 – May 2026",
     location: "Kakkanad, Kochi",
     points: [
       "Built 3+ automation workflows, reducing manual effort and improving efficiency",
