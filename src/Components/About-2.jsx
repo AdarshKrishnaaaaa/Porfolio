@@ -44,7 +44,7 @@ function About() {
               position: "relative",
               display: "flex",
 
-              /* 🔥 BACKGROUND IMAGE */
+              /* BACKGROUND IMAGE */
               backgroundImage: `url(${aboutCardImg})`,
               backgroundSize: "cover",
               backgroundPosition: "center",

@@ -18,7 +18,7 @@ import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
 
 import { Link } from "react-scroll";
-import LikeButton from "./LikeButton";
+// import LikeButton from "./LikeButton";
 
 function NavigationBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -66,7 +66,7 @@ function NavigationBar() {
           </Typography>
 
           <Stack direction="row" alignItems="center">
-            <LikeButton />
+            {/* <LikeButton /> */}
             {isMobile ? (
               <IconButton
                 edge="end"
