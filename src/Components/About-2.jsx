@@ -80,13 +80,11 @@ function About() {
               backgroundSize: "cover",
               backgroundPosition: "center",
 
-              transition: "transform 0.15s ease",
               transform: transform,
 
               cursor: "pointer",
               willChange: "transform",
 
-              boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
               transition: "all 0.3s ease",
               "&:hover": {
                 boxShadow: "0 24px 35px rgba(0, 255, 255, 0.4)",
