@@ -145,8 +145,8 @@ function About() {
               </Typography>
 
               <a
-                href="/Adarsh_Krishna-MERN.pdf"
-                download="Adarsh Resume.pdf"
+                href="/Adarsh_Krishna_Resume.pdf"
+                download="Adarsh Krishna Resume.pdf"
                 style={{ textDecoration: "none" }}
               >
                 <MotionButton
