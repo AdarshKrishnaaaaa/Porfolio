@@ -1,6 +1,7 @@
 import aboutCardImg from "../assets/aboutCardImg.jpg";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 function About() {
   const cardProps = {
@@ -13,6 +14,39 @@ function About() {
 
   const MotionButton = motion(Button);
 
+  const [transform, setTransform] = useState("");
+
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+
+    const rect = card.getBoundingClientRect();
+
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateY = (x - centerX) / 20;
+    const rotateX = (centerY - y) / 20;
+
+    setTransform(`
+      perspective(1200px)
+      rotateX(${rotateX}deg)
+      rotateY(${rotateY}deg)
+      scale(1.03)
+    `);
+  };
+
+  const handleMouseLeave = () => {
+    setTransform(`
+      perspective(1200px)
+      rotateX(0deg)
+      rotateY(0deg)
+      scale(1)
+    `);
+  };
+
   return (
     <>
       <Box
@@ -23,7 +57,7 @@ function About() {
           display: "flex",
           justifyContent: "center",
           flexWrap: "wrap",
-          gap: "1rem",
+          gap: "2rem",
         }}
       >
         {/* Image + Text Card */}
@@ -34,32 +68,33 @@ function About() {
           viewport={{ once: true }}
         >
           <Box
-            component="section"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
             sx={{
-              width: { xs: "20rem", sm: "35rem", md: "40rem" },
+              width: { xs: "20rem", md: "40rem" },
               height: "24rem",
               borderRadius: "2rem",
               overflow: "hidden",
-              zIndex: "1",
-              position: "relative",
-              display: "flex",
 
-              /* BACKGROUND IMAGE */
               backgroundImage: `url(${aboutCardImg})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
 
-              boxShadow: "0 8px 25px rgba(0, 0, 0, 0.3)",
+              transition: "transform 0.15s ease",
+              transform: transform,
+
+              cursor: "pointer",
+              willChange: "transform",
+
+              boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
               transition: "all 0.3s ease",
               "&:hover": {
-                transform: "translateY(-5px) scale(1.01)",
-                boxShadow: "0 12px 35px rgba(0, 255, 255, 0.4)",
+                boxShadow: "0 24px 35px rgba(0, 255, 255, 0.4)",
                 border: "2px solid rgba(204, 245, 254, 0.8)",
               },
             }}
           >
-            {/* 🔥 OVERLAY */}
+            {/* OVERLAY */}
             <Box
               sx={{
                 position: "absolute",

@@ -15,6 +15,7 @@ import weatherAppImg from "../assets/ProjectImg1.png";
 import expensioImg from "../assets/ProjectImg2.png";
 import appStoreImg from "../assets/ProjectImg3.png";
 import helloWorldAppImg from "../assets/ProjectImg4.png";
+import windowTouchImg from "../assets/ProjectImg5.png";
 
 function Projects() {
   return (
@@ -68,14 +69,14 @@ function Projects() {
               live: "https://expense-tracker-seven-phi-24.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/Expense-Tracker",
             },
-            {
-              title: "App Store",
-              description: "Online product management and browsing system.",
-              image: appStoreImg,
-              tech: ["HTML", "CSS", "Javascript"],
-              live: "https://online-website-chi.vercel.app/",
-              link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
-            },
+            // {
+            //   title: "App Store",
+            //   description: "Online product management and browsing system.",
+            //   image: appStoreImg,
+            //   tech: ["HTML", "CSS", "Javascript"],
+            //   live: "https://online-website-chi.vercel.app/",
+            //   link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
+            // },
             {
               title: "HelloWorld",
               description: "Real-time MERN chat with authentication & sockets.",
@@ -83,6 +84,14 @@ function Projects() {
               tech: ["MERN", "Socket.io"],
               live: "https://chat-app-99s1.onrender.com/",
               link: "https://github.com/AdarshKrishnaaaaa/Chat-App",
+            },
+            {
+              title: "Window Touch",
+              description: "Custom upholstery and stylish blinds for modern interiors. (In progress)",
+              image: windowTouchImg,
+              tech: ["React.js", "Bootstrap", "Material UI","Tailwind CSS"],
+              live: "https://window-touch-client.vercel.app/",
+              link: "https://github.com/AdarshKrishnaaaaa/Window-Touch-client",
             },
           ].map((project, index) => (
             <motion.div
