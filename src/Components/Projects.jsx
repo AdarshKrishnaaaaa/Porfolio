@@ -81,7 +81,7 @@ function Projects() {
               title: "HelloWorld",
               description: "Real-time MERN chat with authentication & sockets.",
               image: helloWorldAppImg,
-              tech: ["MERN", "Socket.io"],
+              tech: ["Mongo DB", "Express.js", "React.js", "Node.js", "Socket.io"],
               live: "https://chat-app-99s1.onrender.com/",
               link: "https://github.com/AdarshKrishnaaaaa/Chat-App",
             },
