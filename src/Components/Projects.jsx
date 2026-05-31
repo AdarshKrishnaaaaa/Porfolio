@@ -53,13 +53,27 @@ function Projects() {
         >
           {[
             {
-              title: "Weather App",
+              title: "Window Touch",
               description:
-                "Real-time weather updates with live API integration.",
-              image: weatherAppImg,
-              tech: ["HTML", "CSS", "Javascript", "API"],
-              live: "https://weather-app-kappa-six-78.vercel.app/",
-              link: "https://github.com/AdarshKrishnaaaaa/WeatherApp",
+                "Custom upholstery and stylish blinds for modern interiors. (In progress)",
+              image: windowTouchImg,
+              tech: ["React.js", "Bootstrap", "Material UI", "Tailwind CSS"],
+              live: "https://window-touch-client.vercel.app/",
+              link: "https://github.com/AdarshKrishnaaaaa/Window-Touch-client",
+            },
+            {
+              title: "HelloWorld",
+              description: "Real-time MERN chat with authentication & sockets.",
+              image: helloWorldAppImg,
+              tech: [
+                "Mongo DB",
+                "Express.js",
+                "React.js",
+                "Node.js",
+                "Socket.io",
+              ],
+              live: "https://chat-app-99s1.onrender.com/",
+              link: "https://github.com/AdarshKrishnaaaaa/Chat-App",
             },
             {
               title: "Expensio",
@@ -69,29 +83,22 @@ function Projects() {
               live: "https://expense-tracker-seven-phi-24.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/Expense-Tracker",
             },
-            // {
-            //   title: "App Store",
-            //   description: "Online product management and browsing system.",
-            //   image: appStoreImg,
-            //   tech: ["HTML", "CSS", "Javascript"],
-            //   live: "https://online-website-chi.vercel.app/",
-            //   link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
-            // },
             {
-              title: "HelloWorld",
-              description: "Real-time MERN chat with authentication & sockets.",
-              image: helloWorldAppImg,
-              tech: ["Mongo DB", "Express.js", "React.js", "Node.js", "Socket.io"],
-              live: "https://chat-app-99s1.onrender.com/",
-              link: "https://github.com/AdarshKrishnaaaaa/Chat-App",
+              title: "Weather App",
+              description:
+                "Real-time weather updates with live API integration.",
+              image: weatherAppImg,
+              tech: ["HTML", "CSS", "Javascript", "API"],
+              live: "https://weather-app-kappa-six-78.vercel.app/",
+              link: "https://github.com/AdarshKrishnaaaaa/WeatherApp",
             },
             {
-              title: "Window Touch",
-              description: "Custom upholstery and stylish blinds for modern interiors. (In progress)",
-              image: windowTouchImg,
-              tech: ["React.js", "Bootstrap", "Material UI","Tailwind CSS"],
-              live: "https://window-touch-client.vercel.app/",
-              link: "https://github.com/AdarshKrishnaaaaa/Window-Touch-client",
+              title: "App Store",
+              description: "Online product management and browsing system.(Template edited)",
+              image: appStoreImg,
+              tech: ["HTML", "CSS", "Javascript"],
+              live: "https://online-website-chi.vercel.app/",
+              link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
             },
           ].map((project, index) => (
             <motion.div
