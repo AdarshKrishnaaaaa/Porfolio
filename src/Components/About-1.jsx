@@ -7,7 +7,14 @@ import { Element } from "react-scroll";
 const About = () => {
   return (
     <Element name="about">
-      <Container maxWidth="lg" sx={{ pt: "10rem", mt: "3rem", mb: "10rem" }}>
+      <Container
+        maxWidth="lg"
+        sx={{
+          pt: "8rem",
+          mt: "5rem",
+          mb: "10rem",
+        }}
+      >
         {/* About Heading */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -81,15 +88,15 @@ const About = () => {
                   textAlign: { xs: "center", sm: "center", lg: "start" },
                 }}
               >
-                A passionate Full-Stack Web Developer specializing in the
-                MERN stack, with hands-on experience building responsive and
-                scalable web applications. I completed a 6-month MERN stack
-                internship and training at Camerin Folks Pvt Ltd, where I gained
-                practical experience in real-world development. I have strong
-                skills in developing RESTful APIs, managing databases, and
-                creating efficient front-end and back-end solutions. I focus on
-                writing clean, maintainable code and enjoy solving real-world
-                problems while working in Agile environments.
+                A passionate Full-Stack Web Developer specializing in the MERN
+                stack, with hands-on experience building responsive and scalable
+                web applications. I completed a 6-month MERN stack internship
+                and training at Camerin Folks Pvt Ltd, where I gained practical
+                experience in real-world development. I have strong skills in
+                developing RESTful APIs, managing databases, and creating
+                efficient front-end and back-end solutions. I focus on writing
+                clean, maintainable code and enjoy solving real-world problems
+                while working in Agile environments.
               </Typography>
             </Box>
           </Box>

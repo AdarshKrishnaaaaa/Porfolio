@@ -9,7 +9,6 @@ import Contact from "./Contact";
 const Portfolio = () => {
   const iconStyle = {
     color: "#319CB5",
-    backgroundColor: "rgba(255,255,255,0.05)",
     borderRadius: "12px",
     transition: "all 0.3s ease",
     "&:hover": {

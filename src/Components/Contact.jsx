@@ -29,7 +29,10 @@ const Contact = () => {
     const data = await response.json();
 
     if (data.success) {
-      toast.success("Message sent successfully!");
+      toast.success("Thanks! We'll be in touch.");
+
+      setName("");
+      setEmail("");
       event.target.reset();
     } else {
       console.log("Error", data);
@@ -109,10 +112,18 @@ const Contact = () => {
               }}
               onSubmit={onSubmit}
             >
+              <input
+                type="hidden"
+                name="subject"
+                value="📩 New Portfolio Contact"
+              />
+
+              <input type="hidden" name="from_name" value="Adarsh Portfolio" />
+
               <TextField
                 label="Name"
                 type="text"
-                name="name"
+                name="Full Name"
                 variant="outlined"
                 fullWidth
                 required
@@ -145,7 +156,7 @@ const Contact = () => {
               <TextField
                 label="Email"
                 type="email"
-                name="email"
+                name="Email Address"
                 variant="outlined"
                 fullWidth
                 required
@@ -222,12 +233,7 @@ const Contact = () => {
               </Button>
             </Box>
           </Box>
-          <Toaster
-            position="top-center"
-            containerStyle={{
-              top: "90px",
-            }}
-          />
+          <Toaster position="bottom-right" />
         </Box>
       </motion.div>
     </Element>
