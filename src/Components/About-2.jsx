@@ -160,6 +160,7 @@ function About() {
                   sx={{
                     width: { xs: "100%", sm: "50%" },
                     border: "solid #319CB5 1px",
+                    borderRadius:"2rem",
                     color: "white",
                     textTransform: "capitalize",
                   }}

@@ -21,7 +21,7 @@ const skills = [
   },
   {
     name: "Express",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+    logo: "https://skillicons.dev/icons?i=express",
   },
   {
     name: "React",
@@ -33,15 +33,51 @@ const skills = [
   },
   {
     name: "Bootstrap",
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg",
+    logo: "https://cdn.simpleicons.org/reactbootstrap/41E0FD",
   },
   {
-    name: "TailwindCSS",
+    name: "Tailwind CSS",
     logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+  },
+  {
+    name: "Material UI",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
+  },
+  {
+    name: "SQL",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+  },
+  {
+    name: "Postman",
+    logo: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+  },
+  {
+    name: "Vercel",
+    logo: "https://skillicons.dev/icons?i=vercel",
+  },
+  {
+    name: "Git",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+  },
+  {
+    name: "GitHub",
+    logo: "https://skillicons.dev/icons?i=github",
+  },
+  {
+    name: "Razorpay",
+    logo: "https://cdn.simpleicons.org/razorpay/0C7B93",
+  },
+  {
+    name: "Stripe",
+    logo: "https://cdn.simpleicons.org/stripe/635BFF",
   },
   {
     name: "C",
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+  },
+  {
+    name: "C++",
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
   },
   {
     name: "Java",
@@ -80,7 +116,7 @@ const SkillsSection = () => {
         >
           <Box
             sx={{
-              p: "1rem",
+              p: "5rem",
               display: "flex",
               flexWrap: "wrap",
               gap: 2,
