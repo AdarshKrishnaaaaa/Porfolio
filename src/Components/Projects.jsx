@@ -16,6 +16,7 @@ import expensioImg from "../assets/ProjectImg2.png";
 import appStoreImg from "../assets/ProjectImg3.png";
 import helloWorldAppImg from "../assets/ProjectImg4.png";
 import windowTouchImg from "../assets/ProjectImg5.png";
+import riolabzImg from "../assets/ProjectImg6.png";
 
 function Projects() {
   return (
@@ -52,6 +53,15 @@ function Projects() {
           }}
         >
           {[
+            {
+              title: "Riolabz",
+              description:
+                "A modern and responsive UI/UX redesign of the Riolabz website, built with React and focused on improving user experience, visual appeal, and responsiveness. (Frontend-only)",
+              image: riolabzImg,
+              tech: ["React.js", "Material UI", "CSS3", "Framer Motion"],
+              live: "https://riolabz-redesign.vercel.app/",
+              link: "https://github.com/AdarshKrishnaaaaa/riolabz-redesign",
+            },
             {
               title: "Window Touch",
               description:
@@ -94,7 +104,8 @@ function Projects() {
             },
             {
               title: "App Store",
-              description: "Online product management and browsing system.(Template edited)",
+              description:
+                "Online product management and browsing system.(Template edited)",
               image: appStoreImg,
               tech: ["HTML", "CSS", "Javascript"],
               live: "https://online-website-chi.vercel.app/",
