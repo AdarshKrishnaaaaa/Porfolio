@@ -56,7 +56,7 @@ function Projects() {
             {
               title: "Riolabz",
               description:
-                "A modern and responsive UI/UX redesign of the Riolabz website, built with React and focused on improving user experience, visual appeal, and responsiveness. (Frontend-only)",
+                "A modern, responsive redesign of the Riolabz website focused on enhancing UI/UX, accessibility, smooth animations, and cross-device responsiveness. (Frontend-only)",
               image: riolabzImg,
               tech: ["React.js", "Material UI", "CSS3", "Framer Motion"],
               live: "https://riolabz-redesign.vercel.app/",
@@ -65,7 +65,7 @@ function Projects() {
             {
               title: "Window Touch",
               description:
-                "Custom upholstery and stylish blinds for modern interiors. (In progress)",
+                "A responsive interior design website showcasing premium curtains, blinds, and upholstery with a modern user interface and seamless browsing experience. (In Progress)",
               image: windowTouchImg,
               tech: ["React.js", "Bootstrap", "Material UI", "Tailwind CSS"],
               live: "https://window-touch-client.vercel.app/",
@@ -73,10 +73,11 @@ function Projects() {
             },
             {
               title: "HelloWorld",
-              description: "Real-time MERN chat with authentication & sockets.",
+              description:
+                "A full-stack real-time chat application featuring secure JWT authentication, instant messaging with Socket.IO, and a responsive MERN architecture.",
               image: helloWorldAppImg,
               tech: [
-                "Mongo DB",
+                "MongoDB",
                 "Express.js",
                 "React.js",
                 "Node.js",
@@ -87,27 +88,28 @@ function Projects() {
             },
             {
               title: "Expensio",
-              description: "Track and analyze daily expenses with smart UI.",
+              description:
+                "A responsive expense tracker that helps users manage daily spending through an intuitive interface, expense categorization, and real-time balance tracking.",
               image: expensioImg,
-              tech: ["HTML", "CSS", "Javascript", "Bootstrap", "TailwindCSS"],
+              tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind CSS"],
               live: "https://expense-tracker-seven-phi-24.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/Expense-Tracker",
             },
             {
               title: "Weather App",
               description:
-                "Real-time weather updates with live API integration.",
+                "A weather forecasting application that delivers real-time weather conditions, temperature, humidity, and location-based updates using a live weather API.",
               image: weatherAppImg,
-              tech: ["HTML", "CSS", "Javascript", "API"],
+              tech: ["HTML", "CSS", "JavaScript", "API"],
               live: "https://weather-app-kappa-six-78.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/WeatherApp",
             },
             {
               title: "App Store",
               description:
-                "Online product management and browsing system.(Template edited)",
+                "A responsive e-commerce product showcase template featuring product browsing, category-based navigation, and a clean, user-friendly shopping interface. (Template Customized)",
               image: appStoreImg,
-              tech: ["HTML", "CSS", "Javascript"],
+              tech: ["HTML", "CSS", "JavaScript"],
               live: "https://online-website-chi.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
             },
