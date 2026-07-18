@@ -28,7 +28,7 @@ function NavigationBar() {
     { label: "About", to: "about" },
     { label: "Experience", to: "experience" },
     { label: "Skills", to: "skills" },
-    { label: "Contact", to: "contact" },
+    { label: "Projects", to: "projects" },
   ];
 
   const theme = useTheme();

@@ -20,7 +20,7 @@ import riolabzImg from "../assets/ProjectImg6.png";
 
 function Projects() {
   return (
-    <Element name="project">
+    <Element name="projects">
       <Box
         sx={{
           color: "white",

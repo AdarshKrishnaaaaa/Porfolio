@@ -98,14 +98,14 @@ function Intro() {
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "center",
-                  padding:".6rem 2rem"
+                  padding:".6rem 1.5rem"
                 }}
                 onClick={() => {
-                  const section = document.getElementById("projects");
+                  const section = document.getElementById("contact");
                   section?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
-                See My Works
+                Contact me
               </Button>
             </Link>
           </motion.div>

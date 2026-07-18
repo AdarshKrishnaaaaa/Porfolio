@@ -116,7 +116,7 @@ const SkillsSection = () => {
         >
           <Box
             sx={{
-              p: "5rem",
+              p: "2.5rem",
               display: "flex",
               flexWrap: "wrap",
               gap: 2,

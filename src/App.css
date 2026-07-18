@@ -1,3 +1,43 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  color: white;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(59,130,246,.18), transparent 25%),
+    radial-gradient(circle at 85% 15%, rgba(14,165,233,.18), transparent 30%),
+    radial-gradient(circle at 50% 80%, rgba(139,92,246,.15), transparent 35%),
+    linear-gradient(135deg,#020617 0%,#030712 40%,#0f172a 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  opacity: .7;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+
+    background:
+    radial-gradient(circle,
+    transparent 45%,
+    rgba(0,0,0,.15) 70%,
+    rgba(0,0,0,.65) 100%);
+}
+
 .btn,
 .Btn {
   background-image: linear-gradient(to bottom right, #ffffff, #319cb5);
@@ -28,3 +68,4 @@
     40px 0 150px #319cb5,
     -40px 0 150px #ffffff;
 }
+
