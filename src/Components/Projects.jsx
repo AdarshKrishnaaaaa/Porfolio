@@ -68,7 +68,7 @@ function Projects() {
                 "A responsive interior design website showcasing premium curtains, blinds, and upholstery with a modern user interface and seamless browsing experience. (In Progress)",
               image: windowTouchImg,
               tech: ["React.js", "Bootstrap", "Material UI", "Tailwind CSS"],
-              live: "https://window-touch-client.vercel.app/",
+              live: "https://window-touch.vercel.app",
               link: "https://github.com/AdarshKrishnaaaaa/Window-Touch-client",
             },
             {
@@ -83,8 +83,8 @@ function Projects() {
                 "Node.js",
                 "Socket.io",
               ],
-              live: "https://chat-app-99s1.onrender.com/",
-              link: "https://github.com/AdarshKrishnaaaaa/Chat-App",
+              live: "https://helloworld-chat.vercel.app/login",
+              link: "https://github.com/AdarshKrishnaaaaa/Chat-App-frontend",
             },
             {
               title: "Expensio",
@@ -92,7 +92,7 @@ function Projects() {
                 "A responsive expense tracker that helps users manage daily spending through an intuitive interface, expense categorization, and real-time balance tracking.",
               image: expensioImg,
               tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind CSS"],
-              live: "https://expense-tracker-seven-phi-24.vercel.app/",
+              live: "https://expense-tracker-onlinee.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/Expense-Tracker",
             },
             {
@@ -101,7 +101,7 @@ function Projects() {
                 "A weather forecasting application that delivers real-time weather conditions, temperature, humidity, and location-based updates using a live weather API.",
               image: weatherAppImg,
               tech: ["HTML", "CSS", "JavaScript", "API"],
-              live: "https://weather-app-kappa-six-78.vercel.app/",
+              live: "https://weather-forecasttt.vercel.app",
               link: "https://github.com/AdarshKrishnaaaaa/WeatherApp",
             },
             {
@@ -110,7 +110,7 @@ function Projects() {
                 "A responsive e-commerce product showcase template featuring product browsing, category-based navigation, and a clean, user-friendly shopping interface. (Template Customized)",
               image: appStoreImg,
               tech: ["HTML", "CSS", "JavaScript"],
-              live: "https://online-website-chi.vercel.app/",
+              live: "http://app-store-onlinee.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/Online-Website",
             },
           ].map((project, index) => (

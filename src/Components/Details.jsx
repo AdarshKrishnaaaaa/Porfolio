@@ -4,7 +4,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import Contact from "./Contact";
+import Contact from "./contact";
 
 const Portfolio = () => {
   const iconStyle = {
