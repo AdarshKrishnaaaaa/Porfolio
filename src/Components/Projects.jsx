@@ -63,7 +63,7 @@ function Projects() {
               link: "https://github.com/AdarshKrishnaaaaa/riolabz-redesign",
             },
             {
-              title: "Window Touch",
+              title: "Window Touch", 
               description:
                 "A responsive interior design website showcasing premium curtains, blinds, and upholstery with a modern user interface and seamless browsing experience. (In Progress)",
               image: windowTouchImg,
