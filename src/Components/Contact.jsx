@@ -70,7 +70,7 @@ const Contact = () => {
   };
 
   return (
-    <Element name="contact">
+    <Element id="contact">
       <motion.div
         initial={{ opacity: 0, scale: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
