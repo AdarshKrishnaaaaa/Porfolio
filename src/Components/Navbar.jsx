@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -12,150 +11,286 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
+import Divider from "@mui/material/Divider";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
-import logo from "../assets/logo.png";
-
 import { Link } from "react-scroll";
-// import LikeButton from "./LikeButton";
+
+import logo from "../assets/logo.png";
 
 function NavigationBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const navLinks = [
-    { label: "About", to: "about" },
-    { label: "Experience", to: "experience" },
-    { label: "Skills", to: "skills" },
-    { label: "Projects", to: "projects" },
-  ];
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
-  function closeNav() {
+  const navLinks = [
+    { label: "About", to: "about" },
+    { label: "Services", to: "services" },
+    { label: "Work", to: "projects" },
+    { label: "Process", to: "process" },
+  ];
+
+  const closeNav = () => {
     setDrawerOpen(false);
-  }
+  };
 
   return (
     <>
       <AppBar
-        position="sticky"
+        position="fixed"
         sx={{
+          top: 0,
+          left: 0,
+          right: 0,
           backgroundColor: "transparent",
-          backdropFilter: "blur(10px)",
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
           boxShadow: "none",
-          padding: "0.3rem 1rem",
+          zIndex: 1100,
         }}
       >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography
-            variant="h5"
-            component={"a"}
+        <Toolbar
+          sx={{
+            minHeight: { xs: 64, md: 72 },
+            px: { xs: "2rem", sm: "5rem", md: "8rem" },
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          {/* Logo */}
+          <Box
+            component="a"
             href="/"
             sx={{
-              fontWeight: "bold",
-              display: "inline-flex",
+              display: "flex",
               alignItems: "center",
-              cursor: "pointer",
               textDecoration: "none",
+              flexShrink: 0,
             }}
           >
-            <Box component="img" src={logo} alt="Logo" sx={{ height: 25 }} />
-          </Typography>
+            <Box
+              component="img"
+              src={logo}
+              alt="Adarsh Krishna"
+              sx={{
+                height: { xs: 24, md: 28 },
+                width: "auto",
+                display: "block",
+              }}
+            />
+          </Box>
 
-          <Stack direction="row" alignItems="center">
-            {/* <LikeButton /> */}
-            {isMobile ? (
-              <IconButton
-                edge="end"
-                color="inherit"
-                onClick={() => setDrawerOpen(true)}
-              >
-                <MenuIcon />
-              </IconButton>
-            ) : (
-              <Stack direction="row" spacing={3}>
-                {navLinks.map((link, index) => (
-                  <Link
-                    to={link.to}
-                    smooth={true}
-                    duration={500}
-                    key={link.label}
+          {/* Desktop Navigation */}
+          {!isMobile && (
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={0.5}
+              sx={{
+                ml: "auto",
+                mr: 2,
+              }}
+            >
+              {navLinks.map((link, index) => (
+                <Link
+                  key={link.label}
+                  to={link.to}
+                  smooth={true}
+                  duration={600}
+                  offset={-70}
+                  spy={true}
+                >
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.08,
+                    }}
                   >
-                    <motion.div
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: index * 0.1 }}
-                    >
-                      <Button
-                        sx={{
+                    <Button
+                      sx={{
+                        position: "relative",
+                        color: "rgba(255,255,255,0.78)",
+                        textTransform: "none",
+                        fontSize: "0.95rem",
+                        fontWeight: 500,
+                        px: 1.5,
+                        py: 1,
+
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          left: "50%",
+                          bottom: 4,
+                          width: 0,
+                          height: "2px",
+                          borderRadius: "10px",
+                          backgroundColor: "#319CB5",
+                          transform: "translateX(-50%)",
+                          transition: "width 0.3s ease",
+                        },
+
+                        "&:hover": {
                           color: "#fff",
-                          textTransform: "capitalize",
-                          fontWeight: 500,
-                          fontSize: "1rem",
-                          position: "relative",
-                          "&::before": {
-                            content: '""',
-                            position: "absolute",
-                            bottom: 0,
-                            left: 0,
-                            width: "0%",
-                            height: "1px",
-                            backgroundColor: "#319CB5",
-                            transition: "width 0.3s ease",
-                          },
-                          "&:hover::before": {
-                            width: "100%",
-                          },
-                        }}
-                      >
-                        {link.label}
-                      </Button>
-                    </motion.div>
-                  </Link>
-                ))}
-              </Stack>
-            )}
-          </Stack>
+                          backgroundColor: "transparent",
+                        },
+
+                        "&:hover::after": {
+                          width: "20px",
+                        },
+                      }}
+                    >
+                      {link.label}
+                    </Button>
+                  </motion.div>
+                </Link>
+              ))}
+            </Stack>
+          )}
+
+          {/* Desktop CTA */}
+          {!isMobile && (
+            <Link to="contact" smooth={true} duration={600} offset={-70}>
+              <Button
+                variant="outlined"
+                sx={{
+                  color: "#fff",
+                  borderColor: "rgba(49,156,181,0.7)",
+                  borderRadius: "2rem",
+                  px: 2.5,
+                  py: 1,
+                  textTransform: "none",
+                  fontSize: "0.9rem",
+                  fontWeight: 600,
+
+                  "&:hover": {
+                    borderColor: "#319CB5",
+                    backgroundColor: "rgba(49,156,181,0.08)",
+                  },
+                }}
+              >
+                Start a Project ↗
+              </Button>
+            </Link>
+          )}
+
+          {/* Mobile Menu Button */}
+          {isMobile && (
+            <IconButton
+              onClick={() => setDrawerOpen(true)}
+              aria-label="Open navigation menu"
+              sx={{
+                color: "#fff",
+                border: "1px solid rgba(255,255,255,0.12)",
+                borderRadius: "10px",
+                width: 42,
+                height: 42,
+
+                "&:hover": {
+                  backgroundColor: "rgba(49,156,181,0.08)",
+                  borderColor: "rgba(49,156,181,0.5)",
+                },
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
         </Toolbar>
       </AppBar>
 
-      {/* Drawer for Mobile */}
+      {/* Mobile Drawer */}
       <Drawer
         anchor="right"
         open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
+        onClose={closeNav}
         PaperProps={{
           sx: {
+            width: { xs: 240 },
             backgroundColor: "transparent",
-            backdropFilter: "blur(.5rem)",
+            backdropFilter: "blur(18px)",
+            WebkitBackdropFilter: "blur(18px)",
+            borderLeft: "1px solid rgba(255,255,255,0.08)",
+            color: "#fff",
           },
         }}
       >
-        <Box sx={{ width: 150, mt: 2 }}>
-          <List>
+        <Box
+          sx={{
+            px: 3,
+            pt: 3,
+            pb: 2,
+          }}
+        >
+          {/* Drawer Header */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "end",
+              mb: 3,
+            }}
+          >
+
+            <IconButton
+              onClick={closeNav}
+              sx={{
+                color: "rgba(255,255,255,0.7)",
+                fontSize: "1.5rem",
+              }}
+            >
+              ×
+            </IconButton>
+          </Box>
+
+          <Divider
+            sx={{
+              borderColor: "rgba(255,255,255,0.1)",
+              mb: 2,
+            }}
+          />
+
+          {/* Mobile Links */}
+          <List sx={{ p: 0 }}>
             {navLinks.map((link, index) => (
               <Link
+                key={link.label}
                 to={link.to}
                 smooth={true}
-                duration={500}
-                key={link.label}
+                duration={600}
+                offset={-70}
+                spy={true}
+                onClick={closeNav}
               >
                 <motion.div
-                  initial={{ opacity: 0, x: 50 }}
+                  initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.4, delay: index * 0.1 }}
+                  transition={{
+                    duration: 0.35,
+                    delay: index * 0.07,
+                  }}
                 >
                   <ListItem disablePadding>
-                    <ListItemButton onClick={closeNav}>
+                    <ListItemButton
+                      sx={{
+                        py: 1.5,
+                        px: 1.5,
+                        borderRadius: "10px",
+                        mb: 0.5,
+
+                        "&:hover": {
+                          backgroundColor: "rgba(49,156,181,0.08)",
+                        },
+                      }}
+                    >
                       <ListItemText
                         primary={link.label}
                         primaryTypographyProps={{
                           fontSize: "1rem",
                           fontWeight: 500,
-                          color: "white",
+                          color: "rgba(255,255,255,0.85)",
                         }}
                       />
                     </ListItemButton>
@@ -164,6 +299,37 @@ function NavigationBar() {
               </Link>
             ))}
           </List>
+
+          {/* Mobile CTA */}
+          <Box sx={{ mt: 3 }}>
+            <Link
+              to="contact"
+              smooth={true}
+              duration={600}
+              offset={-70}
+              onClick={closeNav}
+            >
+              <Button
+                fullWidth
+                variant="contained"
+                sx={{
+                  py: 1.3,
+                  borderRadius: "2rem",
+                  backgroundColor: "#319CB5",
+                  color: "#07111f",
+                  fontWeight: 700,
+                  textTransform: "none",
+                  fontSize: "0.95rem",
+
+                  "&:hover": {
+                    backgroundColor: "#3fb0ca",
+                  },
+                }}
+              >
+                Start a Project ↗
+              </Button>
+            </Link>
+          </Box>
         </Box>
       </Drawer>
     </>

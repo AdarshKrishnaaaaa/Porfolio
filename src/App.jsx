@@ -9,6 +9,9 @@ import MyDetails from "./Components/Details";
 import { useEffect } from "react";
 import SkillsSection from "./Components/Skills";
 import Experience from "./Components/Experience";
+import Services from "./Components/Services";
+import WhyWorkWithMe from "./Components/WhyWorkWithMe";
+import Process from "./Components/Process";
 
 function App() {
   useEffect(() => {
@@ -16,14 +19,26 @@ function App() {
   }, []);
 
   return (
-    <div className="App">      
+    <div>
       <NavigationBar />
+
       <Intro />
+
       <About1 />
       <About2 />
-      <Experience />
+
+      <Services />
+
       <Projects />
+
+      <WhyWorkWithMe />
+
+      <Process />
+
+      <Experience />
+
       <SkillsSection />
+
       <MyDetails />
     </div>
   );

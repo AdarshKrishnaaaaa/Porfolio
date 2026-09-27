@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { Box, TextField, Button, Typography, Divider } from "@mui/material";
+import {
+  Box,
+  TextField,
+  Button,
+  Typography,
+  Divider,
+  MenuItem,
+} from "@mui/material";
 import toast, { Toaster } from "react-hot-toast";
-import "../App.css";
 import { Element } from "react-scroll";
 import { motion } from "framer-motion";
 
@@ -11,31 +17,46 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [nameError, setNameError] = useState(false);
-  const [error, setError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const [nameHelper, setNameHelper] = useState("");
-  const [helperText, setHelperText] = useState("");
+  const [emailHelper, setEmailHelper] = useState("");
+  const [phone, setPhone] = useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+
+    const form = event.target;
+    const formData = new FormData(form);
 
     formData.append("access_key", apiUrl);
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
 
-    const data = await response.json();
+      const data = await response.json();
 
-    if (data.success) {
-      toast.success("Thanks! We'll be in touch.");
+      if (data.success) {
+        toast.success("Thanks! I'll get back to you soon.");
 
-      setName("");
-      setEmail("");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setNameError(false);
+        setEmailError(false);
+        setNameHelper("");
+        setEmailHelper("");
+
+        form.reset();
+      } else {
+        toast.error("Something went wrong. Please try again.");
+        console.log("Error", data);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error("Unable to send your enquiry. Please try again.");
     }
   };
 
@@ -43,14 +64,14 @@ const Contact = () => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!value) {
-      setError(true);
-      setHelperText("Email is required");
+      setEmailError(true);
+      setEmailHelper("Email is required");
     } else if (!regex.test(value)) {
-      setError(true);
-      setHelperText("Enter a valid email");
+      setEmailError(true);
+      setEmailHelper("Enter a valid email");
     } else {
-      setError(false);
-      setHelperText("");
+      setEmailError(false);
+      setEmailHelper("");
     }
   };
 
@@ -70,174 +91,353 @@ const Contact = () => {
   };
 
   return (
-    <Element id="contact">
-      <motion.div
-        initial={{ opacity: 0, scale: 0 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+    <Element name="contact">
+      <Box
+        component="section"
+        sx={{
+          py: { xs: 10, md: 14 },
+          px: { xs: 2, sm: 3 },
+        }}
       >
-        <Box
-          component="section"
-          sx={{
-            padding: "4rem 1rem",
-            display: "flex",
-            justifyContent: "center",
-            paddingTop: { xs: "15rem", md: "10rem" },
-          }}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <Box
             sx={{
-              width: "100%",
-              maxWidth: "400px",
-              borderRadius: "1rem",
+              maxWidth: "1100px",
+              mx: "auto",
+              display: "grid",
+              gridTemplateColumns: {
+                xs: "1fr",
+                md: "0.85fr 1.15fr",
+              },
+              gap: { xs: 6, md: 10 },
+              alignItems: "start",
             }}
           >
-            <Typography
-              variant="h4"
-              gutterBottom
-              textAlign="center"
-              letterSpacing=".5rem"
-            >
-              Let's Connect!
-            </Typography>
-
-            <Divider sx={{ my: 5, borderColor: "#319CB5" }} />
-
-            <Box
-              component="form"
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                gap: 2,
-              }}
-              onSubmit={onSubmit}
-            >
-              <input
-                type="hidden"
-                name="subject"
-                value="📩 New Portfolio Contact"
-              />
-
-              <input type="hidden" name="from_name" value="Adarsh Portfolio" />
-
-              <TextField
-                label="Name"
-                type="text"
-                name="Full Name"
-                variant="outlined"
-                fullWidth
-                required
-                value={name}
-                onChange={(e) => {
-                  setName(e.target.value);
-                  validateName(e.target.value);
-                }}
-                error={nameError}
-                helperText={nameHelper}
-                InputLabelProps={{ style: { color: "#ffffff" } }}
-                InputProps={{
-                  style: { color: "#ffffff" },
-                }}
+            {/* Left Content */}
+            <Box>
+              <Typography
                 sx={{
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "#ffffff",
-                    },
-                    "&:hover fieldset": {
-                      borderColor: "#ffffff",
-                    },
-                    "&.Mui-focused fieldset": {
-                      borderColor: "#319CB5",
-                    },
-                  },
-                }}
-              />
-
-              <TextField
-                label="Email"
-                type="email"
-                name="Email Address"
-                variant="outlined"
-                fullWidth
-                required
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value);
-                  validateEmail(e.target.value);
-                }}
-                error={error}
-                helperText={helperText}
-                InputLabelProps={{ style: { color: "#ffffff" } }}
-                InputProps={{
-                  style: { color: "#ffffff" },
-                }}
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "#ffffff",
-                    },
-                    "&:hover fieldset": {
-                      borderColor: "#ffffff",
-                    },
-                    "&.Mui-focused fieldset": {
-                      borderColor: "#319CB5",
-                    },
-                  },
-                }}
-              />
-
-              <TextField
-                label="Message"
-                name="message"
-                variant="outlined"
-                fullWidth
-                required
-                multiline
-                rows={4}
-                InputLabelProps={{ style: { color: "#ffffff" } }}
-                InputProps={{
-                  style: { color: "#ffffff" },
-                }}
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "#ffffff",
-                    },
-                    "&:hover fieldset": {
-                      borderColor: "#ffffff",
-                    },
-                    "&.Mui-focused fieldset": {
-                      borderColor: "#319CB5",
-                    },
-                  },
-                }}
-              />
-
-              <Button
-                type="submit"
-                size="large"
-                className="Btn"
-                sx={{
-                  color: "Black",
-                  textTransform: "capitalize",
-                  border: "none",
-                  borderRadius: "2rem",
-                  fontFamily: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif",
-                  position: "relative",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  color: "#319CB5",
+                  fontSize: "0.8rem",
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  mb: 2,
                 }}
               >
-                Send Message
-              </Button>
+                GET IN TOUCH
+              </Typography>
+
+              <Typography
+                component="h2"
+                sx={{
+                  color: "#fff",
+                  fontSize: {
+                    xs: "2.5rem",
+                    sm: "3.2rem",
+                    md: "4rem",
+                  },
+                  fontWeight: 700,
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.03em",
+                  mb: 3,
+                }}
+              >
+                Let's Build
+                <Box
+                  component="span"
+                  sx={{
+                    display: "block",
+                    color: "#319CB5",
+                  }}
+                >
+                  Something.
+                </Box>
+              </Typography>
+
+              <Typography
+                sx={{
+                  color: "rgba(255,255,255,0.65)",
+                  fontSize: "1rem",
+                  lineHeight: 1.8,
+                  maxWidth: 470,
+                  mb: 4,
+                }}
+              >
+                Have a website idea or need to improve an existing website? Tell
+                me what you're looking for and I'll get back to you.
+              </Typography>
+
+              <Divider
+                sx={{
+                  borderColor: "rgba(255,255,255,0.12)",
+                  mb: 4,
+                }}
+              />
+
+              {/* WhatsApp */}
+              <Box>
+                <Typography
+                  sx={{
+                    color: "rgba(255,255,255,0.5)",
+                    fontSize: "0.75rem",
+                    letterSpacing: "0.12em",
+                    mb: 1,
+                  }}
+                >
+                  PREFER WHATSAPP?
+                </Typography>
+
+                <Button
+                  component="a"
+                  href="https://wa.me/919746089991"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  variant="outlined"
+                  sx={{
+                    color: "#fff",
+                    borderColor: "rgba(49,156,181,0.6)",
+                    borderRadius: "2rem",
+                    px: 3,
+                    py: 1.2,
+                    textTransform: "none",
+                    fontWeight: 600,
+                    "&:hover": {
+                      borderColor: "#319CB5",
+                      backgroundColor: "rgba(49,156,181,0.08)",
+                    },
+                  }}
+                >
+                  WhatsApp Me →
+                </Button>
+              </Box>
+            </Box>
+
+            {/* Form */}
+            <Box
+              sx={{
+                p: { xs: 0, sm: 4 },
+                borderRadius: "1.5rem",
+                border: {
+                  xs: "none",
+                  sm: "1px solid rgba(255,255,255,0.1)",
+                },
+                backgroundColor: {
+                  xs: "transparent",
+                  sm: "rgba(255,255,255,0.025)",
+                },
+              }}
+            >
+              <Typography
+                component="h3"
+                sx={{
+                  color: "#fff",
+                  fontSize: "1.4rem",
+                  fontWeight: 600,
+                  mb: 3,
+                }}
+              >
+                Tell me about your project
+              </Typography>
+
+              <Box
+                component="form"
+                onSubmit={onSubmit}
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 2.2,
+                }}
+              >
+                <input
+                  type="hidden"
+                  name="subject"
+                  value="📩 New Freelance Project Enquiry"
+                />
+
+                <input
+                  type="hidden"
+                  name="from_name"
+                  value="Adarsh Krishna Portfolio"
+                />
+
+                {/* Name */}
+                <TextField
+                  label="Name"
+                  type="text"
+                  name="Full Name"
+                  variant="outlined"
+                  fullWidth
+                  value={name}
+                  onChange={(e) => {
+                    setName(e.target.value);
+                    validateName(e.target.value);
+                  }}
+                  error={nameError}
+                  helperText={nameHelper}
+                  sx={{
+                    ...fieldStyles,
+                  }}
+                />
+
+                {/* Email */}
+                <TextField
+                  label="Email"
+                  type="email"
+                  name="Email Address"
+                  variant="outlined"
+                  fullWidth
+                  required
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    validateEmail(e.target.value);
+                  }}
+                  error={emailError}
+                  helperText={emailHelper}
+                  sx={{
+                    ...fieldStyles,
+                  }}
+                />
+
+                {/* Phone */}
+                <TextField
+                  label="Phone / WhatsApp"
+                  type="tel"
+                  name="Phone / WhatsApp"
+                  variant="outlined"
+                  fullWidth
+                  required
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  sx={{
+                    ...fieldStyles,
+                  }}
+                />
+
+                {/* Project Type */}
+                <TextField
+                  select
+                  label="What do you need?"
+                  name="Project Type"
+                  defaultValue=""
+                  fullWidth
+                  required
+                  sx={{
+                    ...fieldStyles,
+
+                    "& .MuiSelect-select": {
+                      color: "#fff",
+                    },
+                  }}
+                >
+                  <MenuItem value="" disabled>
+                    Select a service
+                  </MenuItem>
+                  <MenuItem value="Business Website">Business Website</MenuItem>
+                  <MenuItem value="Landing Page">Landing Page</MenuItem>
+                  <MenuItem value="Portfolio Website">
+                    Portfolio Website
+                  </MenuItem>
+                  <MenuItem value="E-commerce Website">
+                    E-commerce Website
+                  </MenuItem>
+                  <MenuItem value="Website Redesign">Website Redesign</MenuItem>
+                  <MenuItem value="Custom Web Application">
+                    Custom Web Application
+                  </MenuItem>
+                  <MenuItem value="Wedding Invitation Website">
+                    Wedding Invitation Website
+                  </MenuItem>
+                  <MenuItem value="Website Maintenance">
+                    Website Maintenance
+                  </MenuItem>
+                  <MenuItem value="Other">Other</MenuItem>
+                </TextField>
+
+                {/* Message */}
+                <TextField
+                  label="Message"
+                  name="message"
+                  variant="outlined"
+                  fullWidth
+                  multiline
+                  rows={5}
+                  placeholder="Tell me briefly about your project, requirements, or idea..."
+                  sx={{
+                    ...fieldStyles,
+                  }}
+                />
+
+                {/* Submit */}
+                <Button
+                  type="submit"
+                  size="large"
+                  variant="contained"
+                  sx={{
+                    mt: 1,
+                    py: 1.5,
+                    borderRadius: "2rem",
+                    backgroundColor: "#319CB5",
+                    color: "#07111f",
+                    fontWeight: 700,
+                    textTransform: "none",
+                    fontSize: "1rem",
+                    "&:hover": {
+                      backgroundColor: "#3fb0ca",
+                    },
+                  }}
+                >
+                  Send Enquiry →
+                </Button>
+              </Box>
             </Box>
           </Box>
-          <Toaster position="bottom-right" />
-        </Box>
-      </motion.div>
+        </motion.div>
+
+        <Toaster position="bottom-right" />
+      </Box>
     </Element>
   );
+};
+
+const fieldStyles = {
+  "& .MuiInputLabel-root": {
+    color: "rgba(255,255,255,0.65)",
+  },
+
+  "& .MuiInputLabel-root.Mui-focused": {
+    color: "#319CB5",
+  },
+
+  "& .MuiOutlinedInput-root": {
+    color: "#fff",
+
+    "& fieldset": {
+      borderColor: "rgba(255,255,255,0.2)",
+    },
+
+    "&:hover fieldset": {
+      borderColor: "rgba(255,255,255,0.45)",
+    },
+
+    "&.Mui-focused fieldset": {
+      borderColor: "#319CB5",
+    },
+  },
+
+  "& .MuiFormHelperText-root": {
+    marginLeft: 0,
+  },
+
+  "& input::placeholder, & textarea::placeholder": {
+    color: "rgba(255,255,255,0.35)",
+    opacity: 1,
+  },
 };
 
 export default Contact;
