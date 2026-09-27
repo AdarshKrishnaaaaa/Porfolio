@@ -17,6 +17,7 @@ import appStoreImg from "../assets/ProjectImg3.png";
 import helloWorldAppImg from "../assets/ProjectImg4.png";
 import windowTouchImg from "../assets/ProjectImg5.png";
 import riolabzImg from "../assets/ProjectImg6.png";
+import travonImg from "../assets/ProjectImg7.png";
 
 function Projects() {
   return (
@@ -54,27 +55,42 @@ function Projects() {
         >
           {[
             {
+              title: "TRAVON",
+              description:
+                "A modern, responsive travel agency website built to showcase tour packages, travel services, destinations, and booking enquiries with a premium user experience. (Full-stack; Freelance Project)",
+              image: travonImg,
+              tech: [
+                "React.js",
+                "Node.js",
+                "Express.js",
+                "MongoDB",
+                "Material UI",
+              ],
+              live: "https://travontravel.in/",
+              link: "https://github.com/travontravel/Travon-Client",
+            },
+            {
               title: "Riolabz",
               description:
-                "A modern, responsive redesign of the Riolabz website focused on enhancing UI/UX, accessibility, smooth animations, and cross-device responsiveness. (Frontend-only)",
+                "A modern, responsive redesign of the Riolabz website focused on improving UI/UX, accessibility, smooth animations, and cross-device responsiveness. (Frontend-only; Personal Project)",
               image: riolabzImg,
               tech: ["React.js", "Material UI", "CSS3", "Framer Motion"],
               live: "https://riolabz-redesign.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/riolabz-redesign",
             },
             {
-              title: "Window Touch", 
+              title: "Window Touch",
               description:
-                "A responsive interior design website showcasing premium curtains, blinds, and upholstery with a modern user interface and seamless browsing experience. (In Progress)",
+                "A responsive interior design website showcasing premium curtains, blinds, and upholstery with a modern interface and seamless browsing experience. (Full-stack; Personal Project; In Progress)",
               image: windowTouchImg,
               tech: ["React.js", "Bootstrap", "Material UI", "Tailwind CSS"],
-              live: "https://window-touch.vercel.app",
+              live: "https://window-touch.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/Window-Touch-client",
             },
             {
               title: "HelloWorld",
               description:
-                "A full-stack real-time chat application featuring secure JWT authentication, instant messaging with Socket.IO, and a responsive MERN architecture.",
+                "A full-stack real-time chat application featuring secure JWT authentication, instant messaging with Socket.IO, and a responsive MERN architecture. (Full-stack; Internship Project)",
               image: helloWorldAppImg,
               tech: [
                 "MongoDB",
@@ -89,7 +105,7 @@ function Projects() {
             {
               title: "Expensio",
               description:
-                "A responsive expense tracker that helps users manage daily spending through an intuitive interface, expense categorization, and real-time balance tracking.",
+                "A responsive expense tracker that helps users manage daily spending through an intuitive interface, expense categorization, and real-time balance tracking. (Frontend-only; Internship Project)",
               image: expensioImg,
               tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Tailwind CSS"],
               live: "https://expense-tracker-onlinee.vercel.app/",
@@ -98,16 +114,16 @@ function Projects() {
             {
               title: "Weather App",
               description:
-                "A weather forecasting application that delivers real-time weather conditions, temperature, humidity, and location-based updates using a live weather API.",
+                "A weather forecasting application that provides real-time weather conditions, temperature, humidity, and location-based updates using a live weather API. (Frontend-only; Personal Project)",
               image: weatherAppImg,
               tech: ["HTML", "CSS", "JavaScript", "API"],
-              live: "https://weather-forecasttt.vercel.app",
+              live: "https://weather-forecasttt.vercel.app/",
               link: "https://github.com/AdarshKrishnaaaaa/WeatherApp",
             },
             {
               title: "App Store",
               description:
-                "A responsive e-commerce product showcase template featuring product browsing, category-based navigation, and a clean, user-friendly shopping interface. (Template Customized)",
+                "A responsive e-commerce product showcase featuring product browsing, category-based navigation, and a clean, user-friendly shopping interface. (Frontend-only; Personal Project; Template Customized)",
               image: appStoreImg,
               tech: ["HTML", "CSS", "JavaScript"],
               live: "http://app-store-onlinee.vercel.app/",
