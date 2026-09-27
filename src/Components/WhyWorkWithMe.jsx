@@ -43,7 +43,7 @@ const benefits = [
 
 const WhyWorkWithMe = () => {
   return (
-    <Element name="why-work-with-me">
+    <Element name="why-me">
       <Box
         sx={{
           py: { xs: 9, md: 14 },

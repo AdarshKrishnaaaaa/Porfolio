@@ -29,7 +29,7 @@ function NavigationBar() {
     { label: "About", to: "about" },
     { label: "Services", to: "services" },
     { label: "Work", to: "projects" },
-    { label: "Process", to: "process" },
+    { label: "Why me?", to: "why-me" },
   ];
 
   const closeNav = () => {

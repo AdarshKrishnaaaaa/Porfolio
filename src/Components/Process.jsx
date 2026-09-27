@@ -37,7 +37,7 @@ const steps = [
 
 const Process = () => {
   return (
-    <Element name="process">
+    <Element>
       <Box
         sx={{
           py: { xs: 9, md: 14 },
