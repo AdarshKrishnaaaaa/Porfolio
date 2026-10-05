@@ -140,7 +140,7 @@ function Intro() {
             </Link>
 
             {/* Start Project */}
-            <Link to="contact" smooth={true} duration={500}>
+            <Link to="services" smooth={true} duration={500}>
               <Button
                 variant="outlined"
                 sx={{
@@ -157,7 +157,7 @@ function Intro() {
                   },
                 }}
               >
-                Start a Project →
+                My Services →
               </Button>
             </Link>
           </Box>

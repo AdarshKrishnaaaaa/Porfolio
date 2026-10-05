@@ -123,8 +123,8 @@ function Projects() {
         component="section"
         sx={{
           color: "white",
-          py: { xs: 10, md: 15 },
-          px: { xs: 2, sm: 4, md: 6 },
+          py: { xs: 10, md: 14 },
+          px: { xs: 2, sm: 3 },
           mt: { xs: 5, md: 10 },
         }}
       >

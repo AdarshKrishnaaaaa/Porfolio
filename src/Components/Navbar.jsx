@@ -157,7 +157,7 @@ function NavigationBar() {
               <Button
                 variant="outlined"
                 sx={{
-                  color: "#fff",
+                  color: "#CCF5FE",
                   borderColor: "rgba(49,156,181,0.7)",
                   borderRadius: "2rem",
                   px: 2.5,

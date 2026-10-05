@@ -59,8 +59,8 @@ function Services() {
       component="section"
       id="services"
       sx={{
-        px: { xs: 2, sm: 4, md: 8 },
-        py: { xs: 8, md: 14 },
+        py: { xs: 10, md: 14 },
+          px: { xs: 2, sm: 3 },
       }}
     >
       <Box sx={{ maxWidth: "1200px", mx: "auto" }}>

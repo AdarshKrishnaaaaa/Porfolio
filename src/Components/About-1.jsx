@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Container, Box, Avatar, Divider } from "@mui/material";
 import { motion } from "framer-motion";
-import Person from "../assets/Person.png";
+import Person from "../assets/me.png";
 import { Element } from "react-scroll";
 
 const About = () => {
@@ -55,14 +55,35 @@ const About = () => {
             }}
           >
             {/* Left - Image */}
-            <Avatar
-              alt="Adarsh Krishna"
-              src={Person}
-              sx={{
-                width: { xs: 290, md: 440 },
-                height: { xs: 350, md: 500 },
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.96 }}
+              animate={{
+                opacity: 1,
+                y: [0, -8, 0],
+                scale: 1,
               }}
-            />
+              transition={{
+                opacity: { duration: 0.8 },
+                scale: { duration: 0.8 },
+                y: {
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.8,
+                },
+              }}
+            >
+              <Avatar
+                alt="Adarsh Krishna"
+                src={Person}
+                sx={{
+                  width: { xs: 290, md: 440 },
+                  height: { xs: 350, md: 500 },
+                  backgroundColor: "transparent",
+                  color: "#CCF5FE",
+                }}
+              />
+            </motion.div>
 
             {/* Right - Text Content */}
             <Box padding="1rem">

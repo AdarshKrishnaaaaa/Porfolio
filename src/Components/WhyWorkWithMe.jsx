@@ -46,9 +46,8 @@ const WhyWorkWithMe = () => {
     <Element name="why-me">
       <Box
         sx={{
-          py: { xs: 9, md: 14 },
-        //   background:
-        //     "linear-gradient(180deg, #07111f 0%, #0a192f 100%)",
+          py: { xs: 10, md: 14 },
+          px: { xs: 2, sm: 3 },
         }}
       >
         <Container maxWidth="lg">
@@ -111,8 +110,8 @@ const WhyWorkWithMe = () => {
               }}
             >
               I focus on creating websites that look professional, work
-              smoothly, and are built around what your business actually
-              needs. From the first idea to launch, you get a straightforward
+              smoothly, and are built around what your business actually needs.
+              From the first idea to launch, you get a straightforward
               development experience.
             </Typography>
           </Box>
@@ -144,8 +143,7 @@ const WhyWorkWithMe = () => {
                     gap: { xs: 2, md: 5 },
                     alignItems: "start",
                     py: { xs: 3.5, md: 4 },
-                    borderBottom:
-                      "1px solid rgba(255,255,255,0.12)",
+                    borderBottom: "1px solid rgba(255,255,255,0.12)",
                     transition: "all 0.3s ease",
 
                     "&:hover": {

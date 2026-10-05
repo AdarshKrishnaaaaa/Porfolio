@@ -107,7 +107,7 @@ const Contact = () => {
         >
           <Box
             sx={{
-              maxWidth: "1100px",
+              maxWidth: "1200px",
               mx: "auto",
               display: "grid",
               gridTemplateColumns: {
@@ -120,7 +120,7 @@ const Contact = () => {
           >
             {/* Left Content */}
             <Box>
-              <Typography
+              {/* <Typography
                 sx={{
                   color: "#319CB5",
                   fontSize: "0.8rem",
@@ -130,7 +130,7 @@ const Contact = () => {
                 }}
               >
                 GET IN TOUCH
-              </Typography>
+              </Typography> */}
 
               <Typography
                 component="h2"
@@ -383,7 +383,7 @@ const Contact = () => {
                     py: 1.5,
                     borderRadius: "2rem",
                     backgroundColor: "#319CB5",
-                    color: "#07111f",
+                    color: "#fff",
                     fontWeight: 700,
                     textTransform: "none",
                     fontSize: "1rem",

@@ -52,7 +52,8 @@ function About() {
       <Box
         component="section"
         sx={{
-          pb: "10rem",
+          py: { xs: 10, md: 14 },
+          px: { xs: 2, sm: 3 },
           height: "100%",
           display: "flex",
           justifyContent: "center",

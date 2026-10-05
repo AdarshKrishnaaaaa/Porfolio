@@ -40,7 +40,8 @@ const Process = () => {
     <Element>
       <Box
         sx={{
-          py: { xs: 9, md: 14 },
+          py: { xs: 10, md: 14 },
+          px: { xs: 2, sm: 3 },
         }}
       >
         <Container maxWidth="lg">
