@@ -17,7 +17,7 @@ import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
-import logo from "../assets/logo.png";
+import logo from "../assets/logo_.png";
 
 function NavigationBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);

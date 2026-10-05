@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adarsh-krishna.vercel.app/sitemap.xml
