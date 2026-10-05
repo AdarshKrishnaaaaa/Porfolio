@@ -1,3 +1,7 @@
+/* ================================
+   GLOBAL
+================================ */
+
 html,
 body,
 #root {
@@ -6,7 +10,6 @@ body,
   width: 100%;
   min-height: 100%;
   overflow-x: hidden;
-  background: #03181f;
 }
 
 *,
@@ -16,91 +19,232 @@ body,
 }
 
 html {
-  width: 100%;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
-  width: 100%;
   margin: 0;
-  overflow-x: hidden;
-  color: white;
+  color: #ffffff;
   background:
     radial-gradient(
-      circle at 15% 20%,
-      rgba(59, 130, 246, 0.18),
-      transparent 25%
+      circle at 10% 10%,
+      rgba(49, 156, 181, 0.12),
+      transparent 28%
     ),
     radial-gradient(
-      circle at 85% 15%,
-      rgba(14, 165, 233, 0.18),
+      circle at 90% 20%,
+      rgba(49, 156, 181, 0.08),
       transparent 30%
     ),
-    radial-gradient(
-      circle at 50% 80%,
-      rgba(139, 92, 246, 0.15),
-      transparent 35%
-    ),
-    linear-gradient(135deg, #020617 0%, #030712 40%, #0f172a 100%);
+    linear-gradient(
+      135deg,
+      #020b14 0%,
+      #03121d 45%,
+      #061b26 100%
+    );
+
+  font-family: "Inter", "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
+
+/* ================================
+   BACKGROUND GRID
+================================ */
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
+
   pointer-events: none;
+  z-index: 0;
 
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    linear-gradient(
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.025) 1px,
+      transparent 1px
+    );
 
   background-size: 60px 60px;
 
-  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
-  opacity: 0.7;
+  mask-image: radial-gradient(
+    ellipse at center,
+    black 15%,
+    transparent 80%
+  );
+
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 15%,
+    transparent 80%
+  );
 }
+
+/* ================================
+   VIGNETTE
+================================ */
 
 body::after {
   content: "";
   position: fixed;
   inset: 0;
+
   pointer-events: none;
+  z-index: 0;
 
   background: radial-gradient(
-    circle,
+    ellipse at center,
     transparent 45%,
-    rgba(0, 0, 0, 0.15) 70%,
-    rgba(0, 0, 0, 0.65) 100%
+    rgba(0, 0, 0, 0.3) 100%
   );
 }
 
+/* ================================
+   APP
+================================ */
+
+.App {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  isolation: isolate;
+}
+
+/* ================================
+   BUTTONS
+================================ */
+
 .btn,
 .Btn {
-  background-image: linear-gradient(to bottom right, #ffffff, #319cb5);
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #ccf5fe 45%,
+    #319cb5 100%
+  );
+
+  border: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
 }
 
-.btn::after,
-.Btn::after {
+/* Button shine */
+.btn::before,
+.Btn::before {
   content: "";
+
   position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 80%;
   height: 100%;
-  width: 100%;
-  border-radius: 2rem;
-  background-image: linear-gradient(to bottom right, #319cb5, #ffffff);
-  z-index: -1;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+
+  pointer-events: none;
 }
 
-.btn:hover {
-  z-index: 1;
+.btn:hover::before,
+.Btn:hover::before {
+  left: 130%;
+}
+
+.btn:hover,
+.Btn:hover {
+  transform: translateY(-2px);
+
   box-shadow:
-    40px 0 100px #319cb5,
-    -40px 0 100px #ffffff;
+    0 10px 30px rgba(49, 156, 181, 0.28),
+    0 0 20px rgba(49, 156, 181, 0.12);
 }
 
 .Btn:hover {
-  z-index: 1;
-  color: #040d0f;
-  box-shadow:
-    40px 0 150px #319cb5,
-    -40px 0 150px #ffffff;
+  color: #03181f;
+}
+
+/* ================================
+   SELECTION
+================================ */
+
+::selection {
+  background: rgba(49, 156, 181, 0.35);
+  color: #ffffff;
+}
+
+/* ================================
+   SCROLLBAR
+================================ */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020b14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(49, 156, 181, 0.45);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #319cb5;
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+  body {
+    background:
+      radial-gradient(
+        circle at 20% 10%,
+        rgba(49, 156, 181, 0.1),
+        transparent 30%
+      ),
+      linear-gradient(
+        145deg,
+        #020b14 0%,
+        #03121d 55%,
+        #061b26 100%
+      );
+  }
+
+  body::before {
+    background-size: 45px 45px;
+    opacity: 0.6;
+  }
+
+  .btn:hover,
+  .Btn:hover {
+    transform: none;
+    box-shadow:
+      0 6px 20px rgba(49, 156, 181, 0.22);
+  }
 }
