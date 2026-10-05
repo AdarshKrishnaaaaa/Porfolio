@@ -34,8 +34,8 @@ function Experience() {
       <Box
         sx={{
           color: "white",
-          py: { xs: 10, md: 14 },
-          px: { xs: 2, sm: 3 },
+          py: 15,
+          px: 2,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
