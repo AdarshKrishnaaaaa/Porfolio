@@ -172,7 +172,7 @@ function Projects() {
                   lineHeight: 1.15,
                 }}
               >
-                Featured Work
+                Featured Work's
               </Typography>
 
               <Typography

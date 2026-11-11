@@ -27,8 +27,7 @@ function NavigationBar() {
 
   const navLinks = [
     { label: "About", to: "about" },
-    { label: "Services", to: "services" },
-    { label: "Work", to: "projects" },
+    { label: "Work's", to: "projects" },
     { label: "Why me?", to: "why-me" },
   ];
 
