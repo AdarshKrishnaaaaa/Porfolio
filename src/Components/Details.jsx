@@ -98,7 +98,7 @@ const Portfolio = () => {
             {/* Email */}
             <IconButton
               component="a"
-              href="mailto:adarshk66666@gmail.com"
+              href="mailto:adarshkrishna.dev@gmail.com"
               aria-label="Email"
               sx={iconStyle}
             >
